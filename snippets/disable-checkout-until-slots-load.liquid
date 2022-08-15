@@ -1,0 +1,104 @@
+<style>
+  
+  #delivery-option-div, #pickup-option-div {
+    font-size: 13px !important;
+}
+  .ft-options{ height: 100px !important }
+  #orders-slots-heading{ margin: 20px 10px 0px 0px !important }
+  .pickup-location label {
+  margin-left: -9px !important;
+    text-transform: initial !important;
+    letter-spacing: unset !important;
+}
+  @media only screen and (max-width: 600px) {
+/*     .ft-options {
+    height: 120px !important;
+   } */
+    #delivery-option-div, #pickup-option-div {
+    font-size: 11px !important;
+   }
+  }
+  .pickup-location label:first-of-type {
+  margin-left: -35px !important;
+    
+    letter-spacing: .3rem !important;
+}
+  .cart__item-row.text-center small { margin-left: -10px !important }
+  .pickup-location{ padding: 10px 4px 4px 10px !important}
+  .order-pickup-locations{ border: unset !important }
+  
+</style>
+<script>
+  function hulkappsCheckoutClick() {
+    	return false;
+  	}
+function disableCheckout() {
+  //Polyfill for endsWith - starts
+  if (!String.prototype.endsWith) {
+    String.prototype.endsWith = function(search, this_len) {
+      if (this_len === undefined || this_len > this.length) {
+        this_len = this.length;
+      }
+      return this.substring(this_len - search.length, this_len) === search;
+    };
+  }
+  //Polyfill for endsWith - ends
+  var cartForms = [];
+  var formsInPage = document.querySelectorAll('form');
+  if(formsInPage) {
+    for(var i = 0; i < formsInPage.length; i++) {
+      if(
+        (formsInPage[i].method === 'post') && 
+        (formsInPage[i].action.endsWith('/cart') || formsInPage[i].action.endsWith('/cart/') || formsInPage[i].action.indexOf('/cart?') > -1)
+      ) {
+        cartForms.push(formsInPage[i]);
+      }
+    }
+  }
+  if(cartForms.length) {
+    var checkoutButton1 = cartForms[0].querySelector("button[name='checkout'][type='submit']");
+    if(checkoutButton1) {
+      checkoutButton1.disabled = true;
+    } else {
+      checkoutButton1 = cartForms[0].querySelector("input[name='checkout'][type='submit']");
+      if(checkoutButton1){
+        checkoutButton1.disabled = true;
+      }
+    }
+    if(cartForms.length > 1) {
+      var checkoutButton2 = cartForms[1].querySelector("button[name='checkout'][type='submit']");
+      if(checkoutButton2) {
+        checkoutButton2.disabled = true;
+      } else {
+        checkoutButton2 = cartForms[1].querySelector("input[name='checkout'][type='submit']");
+        if(checkoutButton2){
+          checkoutButton2.disabled = true;
+        }
+      }
+    }
+  }
+};
+disableCheckout();
+
+
+
+//Request Listener for fetch
+/* For Fetch */ 
+var oldFetch = fetch;  // must be on the global scope
+fetch = async function(url, options) {
+    
+    var promise = oldFetch(url, options);
+  	await promise;
+    if (url === '/cart/change.js?t=')  {
+            disableCheckout();
+      		setTimeout(function(){disableCheckout();}, 10); 
+            setTimeout(function(){if(typeof loadSlots !== 'undefined')loadSlots();}, 500); 
+    }
+  if (url === '/cart/add.js') {
+            disableCheckout();
+      		setTimeout(function(){disableCheckout();}, 10); 
+            setTimeout(function(){if(typeof loadSlots !== 'undefined')loadSlots();}, 500); 
+    }
+    return promise;
+}
+</script>

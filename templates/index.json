@@ -1,0 +1,472 @@
+{
+  "sections": {
+    "1649903570bcbd4d92": {
+      "type": "slideshow",
+      "blocks": {
+        "16499035700f111d33-0": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "top_subheading": "",
+            "title": "Celebrate Easter \nat Surrey Hills Grocer",
+            "title_size": 40,
+            "subheading": "with Australia’s contemporary,\nhome-grown artisan chocolatier - Koko Black",
+            "link": "shopify:\/\/collections\/easter-2022",
+            "link_text": "Shop now",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#2f5325",
+            "text_align": "vertical-center horizontal-left",
+            "image": "shopify:\/\/shop_images\/desktop.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/mobile.jpg",
+            "overlay_opacity": 26,
+            "focal_point": "center center"
+          }
+        },
+        "073288d5-4530-4a01-8ebb-2f805c9e2428": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "If You Ate Today, Thank A Farmer",
+            "title_size": 60,
+            "subheading": "",
+            "link": "shopify:\/\/pages\/menu",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/3000.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/600.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        },
+        "e585e294-6f97-487e-81e0-5e71e30f564b": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 53,
+            "subheading": "",
+            "link": "https:\/\/surreyhillsgrocer.oddle.me\/en_SG",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify:\/\/shop_images\/Surrey_Hill_-_Oddle_bcde864b-aae8-4e1f-9153-e1eea58bc595.png",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        },
+        "4ea15720-e7f1-4e25-bc1b-a01b294446df": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify:\/\/pages\/reservation",
+            "link_text": "For reservations",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/20211220-SurreyHills13542.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "16499035700f111d33-0",
+        "073288d5-4530-4a01-8ebb-2f805c9e2428",
+        "e585e294-6f97-487e-81e0-5e71e30f564b",
+        "4ea15720-e7f1-4e25-bc1b-a01b294446df"
+      ],
+      "settings": {
+        "section_height": "450px",
+        "mobile_height": "250px",
+        "parallax": false,
+        "style": "bars",
+        "autoplay": true,
+        "autoplay_speed": 5
+      }
+    },
+    "165391539230355490": {
+      "type": "background-video-text",
+      "disabled": true,
+      "settings": {
+        "subtitle": "",
+        "title": "Where food is the new souvenir",
+        "text": "<p>In the heart of the Murray River's food bowl you'll find Ros Vodusek and Rich Glen Olive Estate in Yarrawonga, where the soil is rich and the produce is grown with love.<br\/><\/p>",
+        "button_label": "",
+        "button_link": "",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=mtZVPKKUxeU",
+        "color_border": "#aa8c8c",
+        "layout": "right",
+        "height": 550
+      }
+    },
+    "16422594283242c212": {
+      "type": "promo-grid",
+      "disabled": true,
+      "blocks": {
+        "85b1b7d7-aec2-4e13-b4d4-3387d7167446": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Groceries",
+            "textarea": "",
+            "cta_text1": "shop",
+            "cta_link1": "shopify:\/\/collections\/available",
+            "cta_text2": "",
+            "image": "shopify:\/\/shop_images\/5x0NxTBA.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 380,
+            "text_size": 100,
+            "text_align": "vertical-center horizontal-center",
+            "focal_point": "center",
+            "color_accent": "#ffffff",
+            "boxed": false,
+            "framed": false
+          }
+        },
+        "1642259428b755b3e8-0": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Surrey Hills Cafe",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "menu",
+            "image": "shopify:\/\/shop_images\/ABrnlFGB.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 380,
+            "text_size": 100,
+            "text_align": "vertical-center horizontal-center",
+            "focal_point": "center",
+            "color_accent": "#ffffff",
+            "boxed": false,
+            "framed": false
+          }
+        },
+        "1642259428b755b3e8-1": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Surrey Hills Rewards",
+            "textarea": "",
+            "cta_text1": "join",
+            "cta_link1": "shopify:\/\/pages\/rewards-program-page",
+            "cta_text2": "",
+            "image": "shopify:\/\/shop_images\/IOcc79Dg.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 380,
+            "text_size": 100,
+            "text_align": "vertical-center horizontal-center",
+            "focal_point": "center",
+            "color_accent": "#ffffff",
+            "boxed": false,
+            "framed": false
+          }
+        },
+        "7edda848-bc8a-45df-8e0b-325850d5ed28": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Concierge",
+            "textarea": "",
+            "cta_text1": "Experience",
+            "cta_link1": "shopify:\/\/pages\/direct-to-boot",
+            "cta_text2": "",
+            "image": "shopify:\/\/shop_images\/Surrey-Hills-Grocer-8-1260x840.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 380,
+            "text_size": 100,
+            "text_align": "vertical-center horizontal-center",
+            "focal_point": "center",
+            "color_accent": "#ffffff",
+            "boxed": false,
+            "framed": false
+          }
+        }
+      },
+      "block_order": [
+        "85b1b7d7-aec2-4e13-b4d4-3387d7167446",
+        "1642259428b755b3e8-0",
+        "1642259428b755b3e8-1",
+        "7edda848-bc8a-45df-8e0b-325850d5ed28"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": false,
+        "space_below": true
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "disabled": true,
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "SURREY HILLS GROCER & CAFE"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Inspired by Australia's harsh climate and warm hospitality, we hope you enjoy your stay with us. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": false,
+        "divider": false
+      }
+    },
+    "1638535726818e3349": {
+      "type": "featured-collection",
+      "settings": {
+        "background-color": false,
+        "space_above": false,
+        "space_below": true,
+        "per_row": 5,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": false,
+        "title": "Surrey Hills Exclusives",
+        "home_featured_products": "surrey-hills-exclusive",
+        "title-2": "Pet Care",
+        "home_featured_products-2": "pet-care",
+        "title-3": "Wines",
+        "home_featured_products-3": "wine"
+      }
+    },
+    "1638524116df4c98b8": {
+      "type": "testimonials",
+      "blocks": {
+        "1638524116ba7f0410-0": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "testimonial": "<p>We are Ros & Daimien Vodusek. Combining our talents as a trained chef and butcher, we took over the Rich Glen estate in 2000 & we now produce 150 olive-oil based food and skin-care products right here on the estate as well as showcase outstanding local produce in our provedore.<\/p>",
+            "image": "shopify:\/\/shop_images\/download_3.png",
+            "author": "Rich Glen Olive Estate",
+            "author_info": "https:\/\/richglenoliveoil.com"
+          }
+        },
+        "0ccbe51a-ad95-4844-ba49-fa9d6dd2eeae": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "testimonial": "<p>We pride ourselves on the exceptional quality, taste and aroma of our truffles often attributed to our rich, sloping and free draining loam soils that create the ideal terroir. The aroma and flavour of truffles have been described as earthy – the floor of the forest, damp earth, roasted dry fruits  and chocolate – with a memorable aroma and lingering aftertaste. <\/p>",
+            "image": "shopify:\/\/shop_images\/stonebarn-logo-web.png",
+            "author": "Stonebarn Truffles",
+            "author_info": "http:\/\/stonebarntruffles.com.au"
+          }
+        },
+        "3e251e9e-e189-40d9-8f90-039efa045dec": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "testimonial": "<p>Named after one of the early settlers and vignerons, Hubert de Castella, the property has been used for producing our fine artisan cheese since 1994 and located in what is known as one of the premium wine and dairy regions of Australia.<\/p>",
+            "image": "shopify:\/\/shop_images\/yvd-logo-962pxWeb.png",
+            "author": "Yarra Valley Dairy",
+            "author_info": "https:\/\/yvd.com.au\/"
+          }
+        }
+      },
+      "block_order": [
+        "1638524116ba7f0410-0",
+        "0ccbe51a-ad95-4844-ba49-fa9d6dd2eeae",
+        "3e251e9e-e189-40d9-8f90-039efa045dec"
+      ],
+      "settings": {
+        "title": "OUR BRANDS",
+        "align_text": "center",
+        "round_images": false,
+        "color_background": "#f9f9f9",
+        "color_text": "#1c1d1d"
+      }
+    },
+    "1638523435093d8128": {
+      "type": "section-selling-points",
+      "blocks": {
+        "1f78cf2d-9f2a-4efc-a98e-31d44d318f7c": {
+          "type": "text_block",
+          "settings": {
+            "usp_link": "shopify:\/\/pages\/rewards-program-page",
+            "default_logo_svg": "member-ship.svg",
+            "usp-heading": "Surrey Hills Friends",
+            "usp-text": "Loyalty Points Program"
+          }
+        },
+        "a2db0620-ecd1-47a5-8344-4954b7bddccb": {
+          "type": "text_block",
+          "settings": {
+            "usp_link": "",
+            "default_logo_svg": "australia.svg",
+            "usp-heading": "Australia Direct",
+            "usp-text": "Exclusive Imports"
+          }
+        },
+        "40454308-79c2-4cd3-a0d9-2c64cb7f01c0": {
+          "type": "text_block",
+          "settings": {
+            "usp_link": "shopify:\/\/pages\/direct-to-boot",
+            "default_logo_svg": "boot-service.svg",
+            "usp-heading": "Direct-to-boot Services",
+            "usp-text": "Complimentary To All"
+          }
+        },
+        "61a7c853-dda6-4dd2-b53b-d6a0a088421a": {
+          "type": "text_block",
+          "settings": {
+            "usp_link": "shopify:\/\/pages\/aussie-style-gourmet-cafe",
+            "default_logo_svg": "receipt-chef.svg",
+            "usp-heading": "Surrey Hills Cafe",
+            "usp-text": "Recipe By Michelin Star Chef"
+          }
+        }
+      },
+      "block_order": [
+        "1f78cf2d-9f2a-4efc-a98e-31d44d318f7c",
+        "a2db0620-ecd1-47a5-8344-4954b7bddccb",
+        "40454308-79c2-4cd3-a0d9-2c64cb7f01c0",
+        "61a7c853-dda6-4dd2-b53b-d6a0a088421a"
+      ],
+      "settings": {
+        "width": 35,
+        "mobile-width": 30
+      }
+    },
+    "blog-posts": {
+      "type": "blog-posts",
+      "settings": {
+        "background-color": false,
+        "space_above": true,
+        "space_below": true,
+        "title": "MEET OUR PARTNERS",
+        "blog": "news",
+        "post_limit": 3,
+        "blog_show_tags": false,
+        "blog_show_date": false,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "view_all": true,
+        "blog_image_size": "wide",
+        "divider": false
+      }
+    },
+    "1638588701c03eb549": {
+      "type": "text-and-image-custom",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/20220126-Surreyhills14904_6530438a-2eae-4e13-bfdb-ad4411be1fde.jpg",
+        "image_width": 700,
+        "code": "<div class=\"section-header__title section-header__title-has-green-line\">Surrey Hills<\/div>\n<div class=\"rte\">From farm to table, we aim to bring you the best gourmet goods Australia has to offer. Journey with us through the harsh climate of Australia as we tell you the stories of our farmers and their lands. May we all \"come as strangers, leave as friends\".<\/div><br>\n<div class=\"section-header__title section-header__title-has-green-line\">Opening hours<\/div>\nTuesday - Sunday : 0900-2100<br>",
+        "button_label": "Read more",
+        "button_link": "shopify:\/\/pages\/about-us",
+        "align_text": "left",
+        "layout": "left"
+      }
+    },
+    "pressrelease": {
+      "type": "press-releases",
+      "blocks": {
+        "press-0": {
+          "type": "press",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/st-time_8ca7efb1-6a25-4105-bcd6-aeeab5835881.jpg",
+            "button_label": "Read more",
+            "button_link": "https:\/\/www.straitstimes.com\/multimedia\/graphics\/2022\/02\/singapore-best-eats\/west.html"
+          }
+        },
+        "press-1": {
+          "type": "press",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/press-18.jpg",
+            "button_label": "Read more",
+            "button_link": "https:\/\/www.esquiresg.com\/galleries\/leisure-travel-international-fully-vaccinated-green-lane-destination-singapore\/"
+          }
+        },
+        "press-2": {
+          "type": "press",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/press-23.jpg",
+            "button_label": "Read more",
+            "button_link": "https:\/\/www.tatlerasia.com\/power-purpose\/business\/9-to-5-pang-gek-teng-surrey-hills-grocer"
+          }
+        }
+      },
+      "block_order": [
+        "press-0",
+        "press-1",
+        "press-2"
+      ],
+      "settings": {
+        "title": "WHAT THE PRESS SAYS ABOUT US"
+      }
+    },
+    "1645582573ecec4622": {
+      "type": "blog-posts",
+      "disabled": true,
+      "settings": {
+        "background-color": false,
+        "space_above": true,
+        "space_below": true,
+        "title": "Blog posts",
+        "blog": "pr",
+        "post_limit": 3,
+        "blog_show_tags": false,
+        "blog_show_date": true,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "view_all": true,
+        "blog_image_size": "wide",
+        "divider": false
+      }
+    },
+    "16499827230afd0973": {
+      "type": "map",
+      "settings": {
+        "map_title": "Our Location",
+        "address": "<p>511 Upper Jurong Rd, #01-01, Singapore 638366<\/p>",
+        "map_address": "511 Upper Jurong Rd, Singapore 638366",
+        "api_key": "",
+        "show_button": true,
+        "background_image": "shopify:\/\/shop_images\/IOcc79Dg.jpg",
+        "background_image_position": "center center"
+      }
+    }
+  },
+  "order": [
+    "1649903570bcbd4d92",
+    "165391539230355490",
+    "16422594283242c212",
+    "rich-text",
+    "1638535726818e3349",
+    "1638524116df4c98b8",
+    "1638523435093d8128",
+    "blog-posts",
+    "1638588701c03eb549",
+    "pressrelease",
+    "1645582573ecec4622",
+    "16499827230afd0973"
+  ]
+}

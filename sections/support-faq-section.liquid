@@ -1,0 +1,78 @@
+
+
+  <div class="page-width support-tab-content tab-content" id="tab-content-{{section.settings.tab-content}}"> 
+    <div class="grid grid--uniform">
+        <div class="grid__item medium-up--one-fifth"></div>
+        <div class="grid__item medium-up--four-fifths">
+            <h2 class="section-header__title">{{section.settings.content-label}}</h2>
+            <div class="tab-questions">
+                {%- if section.blocks.size > 0 -%}
+                {%- for block in section.blocks -%}
+                  <div {{ block.shopify_attributes }}>
+                        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="faq-item">
+                          <button type="button" class="collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="FAQ-content-{{ block.id }}">
+                            {%- render 'collapsible-icons-alt', no_circle: true -%}
+                            <span itemprop="name">{{ block.settings.title }}</span>
+                          </button>
+                          <div id="FAQ-content-{{ block.id }}" class="collapsible-content collapsible-content--all" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <div class="collapsible-content__inner collapsible-content__inner--faq rte" itemprop="text">
+                              {{ block.settings.text }}
+                            </div>
+                          </div>
+                        </div>
+             
+                  </div>
+                {%- endfor -%}
+              {%- endif -%}
+            </div>
+        </div>  
+  </div>
+</div>
+
+  {% schema %}
+    {
+      "name": "Support FAQs",
+      "settings": [
+      {
+        "type": "text",
+        "id": "content-label",
+        "label": "Content heading"
+      },
+      {
+        "type": "text",
+        "id": "tab-content",
+        "label": " content ID"
+      }               
+
+      ],
+      "blocks": [
+        
+      {
+        "type": "question",
+        "name": "Question",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Question",
+            "default": "Frequently asked question"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>"
+          }
+        ]
+      }
+    ],
+      "presets": [
+      {
+        "name": "Support FAQs"
+      }
+    ]
+    
+      
+    }
+  {% endschema %}
+  

@@ -1,0 +1,152 @@
+{
+  "sections": {
+    "main": {
+      "type": "support-faq-menu",
+      "blocks": {
+        "7b796678-5057-418d-9eb3-56b5c7b7400a": {
+          "type": "text_block",
+          "settings": {
+            "tab-label": "Orders",
+            "tab-content": "order"
+          }
+        },
+        "33b13a4b-3bb4-44ff-9059-f9193b94853b": {
+          "type": "text_block",
+          "settings": {
+            "tab-label": "Account",
+            "tab-content": "account"
+          }
+        },
+        "cfb4ec83-5e7c-4f52-b968-fae67cbda2cd": {
+          "type": "text_block",
+          "settings": {
+            "tab-label": "Delivery",
+            "tab-content": "delivery"
+          }
+        }
+      },
+      "block_order": [
+        "7b796678-5057-418d-9eb3-56b5c7b7400a",
+        "33b13a4b-3bb4-44ff-9059-f9193b94853b",
+        "cfb4ec83-5e7c-4f52-b968-fae67cbda2cd"
+      ],
+      "settings": {
+        "tab-active-label": "Introduction",
+        "tab-active-content": "intro",
+        "content-active-label": "We are here to help !!!",
+        "general-text": "<p>The North Face Womens Summit Futurelight Jacket yder beskyttelse mod vind og vejr, hvad enten du er afsted på sommerens vandreture eller har brug for en beskyttende skal på vinterens skiture. Brug den også derhjemme på våde efterårsdage, når regnen siler ned. <br\/><br\/>Jakken er fremstillet i en 3-lags Futurelight-konstruktion, der er fuldstændigt vind- og vandtæt. Den revolutionerende membran yder samtidig god åndbarhed, så du kan holde dig tør og komfortabel både indvendig og udvendig, når du bevæger dig i udfordrende terræn eller løber efter bussen. Det elastiske materiale giver desuden optimal bevægelsesfrihed, så du kan yde dit bedste selv i vådt eller blæsende vejr. <\/p>"
+      }
+    },
+    "1640313578eb0890ee": {
+      "type": "support-faq-section",
+      "blocks": {
+        "00688d2f-3ee6-48f9-9711-49f2c5eb3c5f": {
+          "type": "question",
+          "settings": {
+            "title": "gsdfgfsdgdsg",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+          }
+        },
+        "ea32ff48-4b22-4c2a-8874-cf4c8c0d537d": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+          }
+        },
+        "d34053bd-1b94-4538-9fde-c4b760d5ccc9": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "00688d2f-3ee6-48f9-9711-49f2c5eb3c5f",
+        "ea32ff48-4b22-4c2a-8874-cf4c8c0d537d",
+        "d34053bd-1b94-4538-9fde-c4b760d5ccc9"
+      ],
+      "settings": {
+        "content-label": "Question about orders",
+        "tab-content": "order"
+      }
+    },
+    "16403136026abf477b": {
+      "type": "support-faq-section",
+      "blocks": {
+        "1ddfb8e2-d6ac-4832-b800-590b02831ca9": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+          }
+        },
+        "ccad0a00-7ce5-4aab-ad36-61fcd7fe9f4a": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+          }
+        },
+        "900bef98-a43c-4d18-82bd-33dd77023486": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1ddfb8e2-d6ac-4832-b800-590b02831ca9",
+        "ccad0a00-7ce5-4aab-ad36-61fcd7fe9f4a",
+        "900bef98-a43c-4d18-82bd-33dd77023486"
+      ],
+      "settings": {
+        "content-label": "Question about account",
+        "tab-content": "account"
+      }
+    },
+    "16403136258a6594eb": {
+      "type": "support-faq-section",
+      "blocks": {
+        "efa97410-fb89-4ebc-8dd0-345fbcd9d8c7": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+          }
+        },
+        "673462c0-e142-49d3-95b3-ad46c6f4eb05": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+          }
+        },
+        "aeb1b590-553a-483a-ad6f-6a0ce418844a": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "efa97410-fb89-4ebc-8dd0-345fbcd9d8c7",
+        "673462c0-e142-49d3-95b3-ad46c6f4eb05",
+        "aeb1b590-553a-483a-ad6f-6a0ce418844a"
+      ],
+      "settings": {
+        "content-label": "Question about delivery",
+        "tab-content": "delivery"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1640313578eb0890ee",
+    "16403136026abf477b",
+    "16403136258a6594eb"
+  ]
+}

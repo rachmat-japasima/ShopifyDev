@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "main": {
+      "type": "cafe-bakery-collection",
+      "settings": {
+        "space_below": true,
+        "mobile_scrollable": true,
+        "default_logo_svg": "icon-pizza.svg",
+        "home_featured_products": "pizza",
+        "image": "shopify:\/\/shop_images\/Untitled-1.jpg",
+        "default_logo_svg-2": "icon-burger.svg",
+        "home_featured_products-2": "burger",
+        "image-2": "shopify:\/\/shop_images\/Untitled-1_copy.jpg",
+        "default_logo_svg-3": "icon-snack.svg",
+        "home_featured_products-3": "snacks-sides",
+        "default_logo_svg-4": "icon-salads.svg",
+        "home_featured_products-4": "salads",
+        "default_logo_svg-5": "icon-drink.svg",
+        "home_featured_products-5": "drink"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

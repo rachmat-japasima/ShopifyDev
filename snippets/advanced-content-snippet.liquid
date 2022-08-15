@@ -1,0 +1,49 @@
+{%- comment -%}
+  parameters:
+    image: required
+    text: required
+{%- endcomment -%}
+
+
+<div class="index-section">
+  <div class="custom-content">
+    {%- assign block_width = 'small--one-whole one-half' -%}
+    <div class="custom__item {{ block_width }} align--center" >
+      <div class="custom__item-inner custom__item-inner--image {% if image == blank %} custom__item-inner--placeholder-image{% endif %}">
+          <div class="aos-animate">
+            {%- if image != blank -%}
+              <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: image.aspect_ratio }}%;">
+                {%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                <img class="lazyload"
+                    data-src="{{ img_url }}"
+                    data-widths="[360, 540, 720, 900, 1080, 1600]"
+                    data-aspectratio="{{ image.aspect_ratio }}"
+                    data-sizes="auto"
+                    alt="{{ image.alt }}">
+                <noscript>
+                  <img class="lazyloaded" src="{{ image | img_url: '400x' }}" alt="{{ image.alt }}">
+                </noscript>
+              </div>
+              {%- else -%}
+                <div class="image-wrap">
+                  {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+            {%- endif -%}
+          </div>
+      </div>
+    </div>
+    <div class="custom__item {{ block_width }} align--center">
+      <div class="custom__item-inner custom__item-inner--liquid">
+          {%- if text != blank -%}
+            <div class="rte">
+              {{ text }}
+            </div>
+          {%- else -%}
+            <div class="rte">
+              {{ 'home_page.onboarding.no_content' | t }}
+            </div>
+          {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>

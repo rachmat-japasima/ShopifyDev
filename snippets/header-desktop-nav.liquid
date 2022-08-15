@@ -1,0 +1,218 @@
+{%- liquid
+  unless limit
+    assign limit = main_menu.links.size
+  endunless
+  unless offset
+    assign offset = 0
+  endunless
+-%}
+
+<ul
+  class="site-nav site-navigation small--hide"
+  {% unless disable_aria %}
+    role="navigation" aria-label="Primary"
+  {% endunless %}>
+  {%- for link in main_menu.links limit: limit offset: offset -%}
+    {%- liquid
+      assign has_dropdown = false
+      assign is_megamenu = false
+      if link.links != blank
+        assign has_dropdown = true
+        if link.levels > 1
+          assign is_megamenu = true
+        endif
+      endif
+    -%}
+
+    <li
+      class="site-nav__item site-nav__expanded-item{% if has_dropdown %} site-nav--has-dropdown{% endif %}{% if is_megamenu %} site-nav--is-megamenu{% endif %}"
+      {% if has_dropdown %}aria-haspopup="true"{% endif %}>
+
+      <a href="{{ link.url }}" id="{% if link.title == 'Surrey Hills Cafe' %}myBtn{% endif %}" class="site-nav__link {% if has_dropdown %} site-nav__link--has-dropdown{% endif %}  {% if link.title == "Support me"%} medium-up--hide {% endif %}">
+        {{ link.title }}
+      </a>
+
+      {%- if link.title == "Surrey Hills Cafe" -%}
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>         
+            <div class="modal-content__menu-catalog">
+              <img src="https://cdn.shopify.com/s/files/1/0548/8148/4860/files/scroll-menu--1.png?v=12739812739" alt="Menu" loading="lazy">
+              <img src="https://cdn.shopify.com/s/files/1/0548/8148/4860/files/scroll-menu--2.png?v=12739812739" alt="Menu" loading="lazy">
+              <img src="https://cdn.shopify.com/s/files/1/0548/8148/4860/files/scroll-menu--3.png?v=12739812739" alt="Menu" loading="lazy">
+              <img src="https://cdn.shopify.com/s/files/1/0548/8148/4860/files/scroll-menu--4.png?v=12739812739" alt="Menu" loading="lazy">
+              <img src="https://cdn.shopify.com/s/files/1/0548/8148/4860/files/scroll-menu--5.png?v=12739812739" alt="Menu" loading="lazy">
+              <img src="https://cdn.shopify.com/s/files/1/0548/8148/4860/files/scroll-menu--6.png?v=12739812739" alt="Menu" loading="lazy">
+              <img src="https://cdn.shopify.com/s/files/1/0548/8148/4860/files/scroll-menu--7.png?v=12739812739" alt="Menu" loading="lazy">
+              <img src="https://cdn.shopify.com/s/files/1/0548/8148/4860/files/scroll-menu--8.png?v=12739812739" alt="Menu" loading="lazy">
+              <img src="https://cdn.shopify.com/s/files/1/0548/8148/4860/files/scroll-menu--9.png?v=12739812739" alt="Menu" loading="lazy">
+              <img src="https://cdn.shopify.com/s/files/1/0548/8148/4860/files/scroll-menu--10.png?v=12739812739" alt="Menu" loading="lazy">
+              <img src="https://cdn.shopify.com/s/files/1/0548/8148/4860/files/scroll-menu--11.png?v=12739812739" alt="Menu" loading="lazy">
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- if is_megamenu -%}
+        {%- assign previous_column_type = '' -%}
+        {%- assign animation_column = 1 -%}
+        {%- assign grid_size_class = 'medium-up--one-third large-up--one-quarter' -%}
+
+        <div class="site-nav__dropdown megamenu text-left">
+          <div class="page-width">
+            <div class="grid">
+              <div class="grid__item {{ grid_size_class }} appear-animation appear-delay-{{ animation_column }}">
+                {%- assign animation_column = animation_column | plus: 1 -%}
+
+                {%- for childlink in link.links -%}
+                  {%- liquid
+                    assign create_new_column = false
+
+                    if childlink.levels > 0 and forloop.index != 1
+                      assign create_new_column = true
+                    endif
+
+                    if childlink.levels == 0 and previous_column_type == 'full'
+                      assign create_new_column = true
+                    endif
+                  -%}
+
+                  {%- if create_new_column -%}
+                    </div><div class="grid__item {{ grid_size_class }} appear-animation appear-delay-{{ animation_column }}">
+                    {%- assign animation_column = animation_column | plus: 1 -%}
+                  {%- endif -%}
+
+                  {%- assign subcollection_drop = false -%}
+                  {%- if childlink.levels > 0 and childlink.url contains '/collections/' -%}
+                    {%- liquid
+                      assign lang_code_string = request.locale.iso_code | prepend: '/' | downcase
+                      assign subcollection_handle = childlink.url | remove: '/collections/' | remove: lang_code_string
+                      assign subcollection_drop = collections[subcollection_handle]
+                    -%}
+                    {%- if subcollection_drop.image != blank -%}
+                      <a
+                        href="{{ childlink.url }}"
+                        class="megamenu__colection-image"
+                        aria-label="{{collections[subcollection_handle].title}}"
+                        style="background-image: url({{ collections[subcollection_handle].image | img_url: '400x' }})"></a>
+                    {%- endif -%}
+                  {%- endif -%}
+
+                 
+                  <a href="{{ childlink.url }}" class="site-nav__dropdown-link site-nav__dropdown-link--top-level{% if childlink.title == 'Group' %} menu--hide{% endif %}">
+                    <span style="{% if childlink.title == 'Frozen' or childlink.title == 'Meat & Seafood' %}white-space: nowrap;{% endif %}">{{ childlink.title }}</span>
+                    {% if childlink.title == 'Frozen' or childlink.title == 'Meat & Seafood' %}
+                      <span class="overlay--coming-soon{% if childlink.title == 'Meat & Seafood' %} overlay--mns{% endif %}">Coming Soon</span>
+                    {% endif %}
+                  </a>
+                  
+                  {%- liquid
+                    if childlink.levels > 0
+                      assign previous_column_type = 'full'
+                    else
+                      assign previous_column_type = 'single'
+                    endif
+                  -%}
+
+                  {%- for grandchildlink in childlink.links -%}
+                    <div>
+                      <a href="{{ grandchildlink.url }}" class="site-nav__dropdown-link">
+                        {{grandchildlink.title}}
+                      </a>
+                    </div>
+                  {%- endfor -%}
+                {%- endfor -%}
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- elsif has_dropdown -%}
+        <ul class="site-nav__dropdown text-left">
+          {%- for childlink in link.links -%}
+            {%- liquid
+              assign has_sub_dropdown = false
+              if childlink.links != blank
+                assign has_sub_dropdown = true
+              endif
+            -%}
+
+            <li class="{% if has_sub_dropdown %} site-nav__deep-dropdown-trigger{% endif %}">
+              <a href="{{ childlink.url }}" class="site-nav__dropdown-link site-nav__dropdown-link--second-level{% if has_sub_dropdown %} site-nav__dropdown-link--has-children{% endif %}">
+                {{ childlink.title | escape }}
+                {%- if has_sub_dropdown -%}
+                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"/></svg>
+                {%- endif -%}
+              </a>
+              {%- if has_sub_dropdown -%}
+                <ul class="site-nav__deep-dropdown">
+                  {%- for grandchildlink in childlink.links -%}
+                    <li>
+                      <a href="{{ grandchildlink.url }}" class="site-nav__dropdown-link">{{ grandchildlink.title | escape }}</a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </li>
+  {%- endfor -%}
+</ul>
+
+<script>
+ // Get the modal
+  var modal = document.getElementById("myModal");
+  
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+  
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  </script>
+
+  <script>
+ // Get the modal
+  var modal = document.getElementById("myModal");
+  
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+  
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  </script>

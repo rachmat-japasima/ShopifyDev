@@ -1,0 +1,123 @@
+{%- style -%}
+@media only screen and (min-width:769px){
+    .grid-usp-icon{
+        width:{{section.settings.width}}px;
+        height:{{section.settings.width}}px;
+    }
+}
+@media only screen and (max-width:768px){
+        .grid-usp-icon {
+            width:{{section.settings.mobile-width}}px;
+            height:{{section.settings.mobile-width}}px;
+        }     
+}
+        
+{%- endstyle -%}
+
+        <div class="page-width">
+            <div class="grid grid--uniform">
+                {%- liquid
+                    assign grid_item_width = 'medium-up--one-third'
+                    case section.blocks.size
+                      when 1
+                        assign grid_item_width = 'medium-up--one-half'
+                      when 2
+                        assign grid_item_width = 'medium-up--one-half'
+                        when 3
+                        assign grid_item_width = 'medium-up--one-third'
+                      when 4
+                        assign grid_item_width = 'medium-up--one-quarter'
+                    endcase
+                  -%}
+                <!-- Blocks -->
+                {%- for block in section.blocks -%}
+                {%- assign column_width = grid_item_width -%}
+                <div class="grid__item small--one-half {{ column_width }}">
+                    <a class="grid-usp__item" href="{{ block.settings.usp_link }}">
+                        <div class="grid-usp-icon pull-left">
+                            {%- assign img_url = block.settings.default_logo_svg -%}
+                            {%- assign logo_default_type = 'svg' -%}  
+                            <img class="lazyload"
+                                data-src="{{ img_url | asset_url | split: '?' | first}}"
+                                data-sizes="auto"
+                                img_type: logo_default_type >                                                                                                   
+                        </div>
+                        <div class="pull-right">
+                            {%- if block.settings.usp-heading != blank -%}
+                                <div class="grid--usp-heading">{{block.settings.usp-heading}}</div>
+                            {%- endif -%}
+                            {%- if block.settings.usp-text != blank -%}
+                                <div class="grid--usp-text">{{block.settings.usp-text}}</div>
+                            {%- endif -%}
+                        </div>
+                    </a>
+                </div>
+                {%- endfor -%}
+            </div>
+        </div>      
+{% schema %}
+    {
+        "name": "Selling points", 
+        "class":"section-selling-point",
+        "max_blocks": 4,
+        "settings":[
+            {
+                "type": "range",
+                "id": "width",
+                "label": "Desktop Icon Width",
+                "default": 30,
+                "min": 20,
+                "max": 100,
+                "step": 1,
+                "unit": "px"
+          },
+          {
+            "type": "range",
+            "id": "mobile-width",
+            "label": "Mobile Icon Width",
+            "default": 30,
+            "min": 20,
+            "max": 100,
+            "step": 1,
+            "unit": "px"
+      }
+        ],
+        "blocks" : [
+            {
+            "type": "text_block",
+            "name": "Usp Block",
+            "settings": [
+            {
+                "type": "url",
+                "id": "usp_link",
+                "label": "Usp link"
+              
+            },
+                {
+                    "type": "text",
+                    "id": "default_logo_svg",
+                    "label": "Usp Icon"
+                  
+                },
+                {
+                    "type": "text",
+                    "id": "usp-heading",
+                    "label": "Contact form usp heading",
+                    "default":"USP Heading"
+                },
+                {
+                    "type": "text",
+                    "id": "usp-text",
+                    "label": "Contact form usp text",
+                    "default":"USP text"          
+                } 
+            ]
+        }
+    ],
+        "presets": [
+        {
+        "name": "Selling points"
+        }
+    ]
+    }
+{% endschema %}

@@ -1,0 +1,47 @@
+<script id="bss-b2b-wholesaler-form">
+                if (typeof BSS_B2B == 'undefined') {
+                  var BSS_B2B = {};
+                }
+                 BSS_B2B.formDataRender = [{"type":"text","required":true,"label":"Company","className":"form-control company-field","name":"company-field","access":false,"subtype":"text","placement":"bottom"},{"type":"text","required":true,"label":"Shipping Address","className":"form-control address-field","name":"address-field","access":false,"subtype":"text","placement":"bottom"},{"type":"text","required":true,"label":"City","className":"form-control city-field","name":"city-field","access":false,"subtype":"text","placement":"bottom"},{"type":"number","required":true,"label":"Phone Number","className":"form-control","name":"number-1641970754760","access":false,"placement":"bottom"},{"type":"text","required":true,"label":"Acra number","className":"form-control","name":"text-1641970881634","access":false,"subtype":"text","placement":"bottom"},{"type":"text","required":false,"label":"Company website","className":"form-control","name":"text-1641970892907","access":false,"subtype":"text","placement":"bottom"}];
+                 BSS_B2B.formId = 4104;
+                 BSS_B2B.reCAPCHA = 0;
+                 BSS_B2B.CAPCHA_SITE_KEY = "6LcYPEgbAAAAAKEQdimI1PPA4vuOJHxNb5p6eLUo";
+                 BSS_B2B.status = 1;
+                 BSS_B2B.created_account = 1;
+                 BSS_B2B.redirect_url = "/account";
+                 BSS_B2B.taxExempt = 0;
+                </script><style>#shopify-section-bss-b2b-wholesaler-form-4104 .form-vertical {
+transform: translateX(50%);
+}
+#shopify-section-bss-b2b-wholesaler-form-4104 input {
+width: 100%;
+}
+#shopify-section-bss-b2b-wholesaler-form-4104 .rendered-form input{
+height: 44px;
+border-radius: 0px;
+}
+.bss-b2b-rf {
+transform: translateX(10%);
+}
+@media only screen and (max-width: 768px) {
+#shopify-section-bss-b2b-wholesaler-form-4104 form {
+transform: translateX(-50%);
+}
+.grid__item.medium-up--five-sixths.medium-up--push-one-twelfth.bss-b2b-rf {
+transform: translateX(0%);
+}
+}
+</style>{% assign bss-b2b-include-password = true %}
+<div class="page-width">
+  <div class="grid">
+    <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+      <div class="section-header text-center">
+        <h1>{{ page.title }}</h1>
+      </div>
+      <div class="rte">
+        {{ page.content }}
+      </div>
+    </div>
+    {% section 'bss-b2b-wholesaler-form-4104' %}
+  </div>
+</div>

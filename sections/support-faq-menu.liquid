@@ -1,0 +1,87 @@
+<div class="page-width ">
+    <div class="grid grid--uniform support-tab-menu small--hide">
+        <div class="grid__item medium-up--one-fifth">
+            <ul class="tabs">
+                <li class="tab active" data-content-id="tab-content-{{section.settings.tab-active-content}}">{{section.settings.tab-active-label}}</li>
+                <!-- Blocks -->
+                {%- for block in section.blocks -%}
+                    <li class="tab" data-content-id="tab-content-{{block.settings.tab-content}}">{{block.settings.tab-label}}</li>                                 
+                {%- endfor -%}
+              </ul>
+        </div>              
+    </div>
+    <div class="tab--menu-mobile medium-up--hide">
+        <select id="floorplanSelect" class="form-control" name="floorplan">
+            <option value="tab-content-{{section.settings.tab-active-content}}">{{section.settings.tab-active-label}}</option>
+            {%- for block in section.blocks -%}
+                <option value="tab-content-{{block.settings.tab-content}}">{{block.settings.tab-label}}</option>                                 
+            {%- endfor -%}
+          </select>
+    </div>
+    <div class="grid grid--uniform tab-content active support-tab-content " id="tab-content-{{section.settings.tab-active-content}}">
+        <div class="grid__item medium-up--one-fifth"></div>
+        <div class="grid__item medium-up--four-fifths">
+            <h2 class="section-header__title">{{section.settings.content-active-label}}</h2>
+            <div class="rte">
+              {{section.settings.general-text}}
+            </div>
+         
+         </div>  
+  </div>
+
+</div>
+
+{% schema %}
+{
+    "name": "Support tab Menu",
+    "settings": [
+    {
+        "type": "text",
+        "id": "tab-active-label",
+        "label": "Active tab label"
+      },
+        {
+            "type": "text",
+            "id": "tab-active-content",
+            "label": "Active tab content ID"
+          }  ,
+          {
+            "type": "text",
+            "id": "content-active-label",
+            "label": "Active content label"
+          },
+          {
+            "type": "richtext",
+            "id": "general-text",
+            "label": "Active content"
+          }
+
+                                        
+    ],
+    "blocks" : [
+        {
+        "type": "text_block",
+        "name": "Support tab menu item",
+        "settings": [
+            {
+                "type": "text",
+                "id": "tab-label",
+                "label":"Support tab label"             
+            },
+            {
+                "type": "text",
+                "id": "tab-content",
+                "label":"Support tab ID"             
+            }
+        ]
+    }
+]
+
+
+}
+{% endschema %}
+
+
+
+
+       

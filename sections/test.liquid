@@ -1,0 +1,141 @@
+<div class="page-width">
+    <nav>
+        <ul>
+          <!-- ADD the class 'inSection' only to mark the first item of my nav when the page load -->
+          <li><a class="inSection" href="#one">section one</a></li>
+          <li><a href="#two">section two</a></li>
+          <li><a href="#three">section three</a></li>
+          <li><a href="#four">section four</a></li>
+        </ul>
+      </nav>
+      <div class="wrap">
+        <section id="one">
+          <p>section one</p>
+        </section>
+        <section id="two">
+          <p>section two</p>
+        </section>
+        <section id="three">
+          <p>section three</p>
+        </section>
+        <section id="four">
+          <p>section four</p>
+        </section>
+      </div>
+</div>
+
+<script>
+    function menuOnScroll(mySection, myMenu, myClass) {
+  $(window).scroll(function(){
+    var elScroll = $(window).scrollTop();
+    $(mySection).each(function(i){
+      if ($(this).offset().top <= elScroll) {
+        $(myMenu).removeClass(myClass);
+        $(myMenu).eq(i).addClass(myClass);
+      }
+    });
+  });
+}
+//Call function.
+//First parameter will be the section that we want to go.
+//Second will be the item that will change his css.
+//Third will be the class css to add to the item( Our second parameter) Is IMPORTAT to note that we must to skip the dot of our class.
+menuOnScroll('section','nav ul li a', 'inSection');
+
+
+
+//Function to animate the scroll when click on a menu item.
+//IMPORTANT. This function is only use for animate the scroll, you could skip it if you want.
+function scrollToAnyPoint (navItem) {
+  var getAttr;
+  $(navItem).click(function(e){
+    e.preventDefault();
+    getAttr = $(this).attr('href');
+    var toSection = $(getAttr).offset().top;
+    $("html, body").animate({scrollTop:toSection}, 1000)
+  });
+}
+//Call Function
+scrollToAnyPoint('nav ul li a');
+</script>
+
+<style>
+    a{
+  display: inline-block;
+  padding: 10px 30px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+a:hover {
+  background: #89FAD0;
+}
+li{
+  list-style-type: none;
+  float: left;
+}
+nav{
+  position: fixed;
+  background: rgba(0,0,0,.3);
+  right: 3%;
+}
+p {
+  color:#F8FE85;
+  font-size:2em;
+  margin:40px;
+  text-transform: uppercase;
+}
+section {
+  width:100%;
+  height:100vh; /*vh gets height's viewport*/
+  float: left;
+}
+section#two{
+  height:500px;
+}
+/*section:nth-child(even) {
+  background: #7A3476;
+}
+section:nth-child(odd) {
+  background: #FF6464;
+}*/
+
+section#one {
+  background: #F35F5F;
+}
+section#two {
+  background: #F8AA27;
+}
+section#three {
+  background: #2CC4CB;
+}
+section#four {
+  background: #1972A4;
+}
+/*END of styles - - - - - - - - - - -.*/
+
+
+/*Class to add to the nav menu when viewport shows any secction.*/
+.inSection {
+  background: #FF8A69;
+}
+/*IMPORTANT. You can change this class for any other that you want or make your own. Only remember call it from the function JS.*/
+</style>
+
+{% schema %}
+    {
+      "name": "test",
+      "class":"support-faq-section",
+   
+    
+      "presets": [
+      {
+        "name": "test"
+      }
+    ]
+    
+      
+    }
+  {% endschema %}

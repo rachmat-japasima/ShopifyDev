@@ -1,0 +1,133 @@
+
+<div class="page-width dtb-pickup {% if section.settings.background-color %}section--background-gray {% endif %}"  id="direct-to-boot-pick-up">
+    <h2 class="section-header__title text-center">
+        {{ section.settings.title | escape }}
+      </h2>
+    <p class="text-center">{{ section.settings.text | escape }}</p>
+    <!-- Blocks -->
+    {%- for block in section.blocks -%}
+      <div class="feature-row-wrapper pick-up-item">
+        {%- capture image_layout -%}
+          <div class="feature-row__item" style="max-width: {{ block.settings.image_width }}px" data-aos>
+              {%- if block.settings.image != blank -%}
+                    <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;">
+                      {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                      <img class="feature-row__image lazyload"
+                        data-src="{{ img_url }}"
+                        data-widths="[180, 360, 540, 750, 900, 1080]"
+                        data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                        data-sizes="auto"
+                        alt="{{ block.settings.image.alt }}">
+                    </div>
+                
+              {%- endif -%}
+              {%- if block.settings.image == blank -%}
+                <div>
+                  <div class="image-wrap">
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                </div>
+              {%- endif -%}
+          </div>
+        {%- endcapture -%}
+    
+        <div class="feature-row">
+          {%- if block.settings.layout == 'left' -%}
+            {{ image_layout }}
+          {%- endif -%}
+    
+          <div class="feature-row__item feature-row__text feature-row__text--{{ block.settings.layout }}" data-aos>
+
+            {%- if block.settings.block-title != blank -%}
+              <div class="h3 appear-delay{% cycle '','-1','-2','-3','-4' %}">{{block.settings.block-title | escape }}</div>
+            {%- endif -%}
+            {%- if block.settings.block-text != blank -%}
+              <div class="rte appear-delay{% cycle '','-1','-2','-3','-4' %}">{{ block.settings.block-text }}</div>
+            {%- endif -%}
+          </div>
+    
+          {%- if block.settings.layout == 'right' -%}
+            {{ image_layout }}
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+</div>
+
+
+{% schema %}
+    {
+        "name": "Direct to boot & pick up",
+        "max_blocks": 4,
+        "settings": [
+            {
+              "type": "checkbox",
+              "id": "background-color",
+              "label": "Section background color"
+            },
+             
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Section title"
+            },          
+            {
+              "type": "text",
+              "id": "text",
+              "label": "Text"
+
+            }                                
+        ],
+        "blocks" : [
+        {
+          "type": "text_block",
+          "name": "Block",
+          "settings": [
+          {
+            "type": "select",
+            "id": "layout",
+            "label": "Layout",
+            "default": "right",
+            "options": [
+              {
+                "value": "left",
+                "label": "Image on left"
+              },
+              {
+                "value": "right",
+                "label": "Image on right"
+              }
+            ]
+          },
+              {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+              },
+              {
+                "type": "range",
+                "id": "image_width",
+                "label": "Image width",
+                "default": 700,
+                "min": 200,
+                "max": 700,
+                "step": 10,
+                "unit": "px"
+              },
+              {
+                "type": "text",
+                "id": "block-title",
+                "label": "Heading"
+              },
+              {
+                "type": "richtext",
+                "id": "block-text",
+                "label": "Text",
+                "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+              }             
+          ]
+        }
+      ]
+ }
+{% endschema %}
+    

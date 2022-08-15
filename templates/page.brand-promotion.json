@@ -1,0 +1,263 @@
+{
+  "sections": {
+    "main": {
+      "type": "hero-video",
+      "settings": {
+        "title": "",
+        "title_size": 80,
+        "subheading": "",
+        "link_text": "",
+        "link": "",
+        "color_accent": "rgba(0,0,0,0)",
+        "text_align": "vertical-center horizontal-center",
+        "video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0548\/8148\/4860\/files\/236354005_441092800356993_8033309533354010883_n.mp4?v=1639447009",
+        "overlay_opacity": 0,
+        "section_height": "650px",
+        "mobile_height": "auto"
+      }
+    },
+    "1639197697dffa3622": {
+      "type": "section-selling-points",
+      "blocks": {
+        "8b7e4d59-86dd-4c9c-820b-582d2c64a7b0": {
+          "type": "text_block",
+          "settings": {
+            "usp_link": "",
+            "default_logo_svg": "natural.svg",
+            "usp-heading": "100% NATURAL",
+            "usp-text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+          }
+        },
+        "ce2a1226-45c8-4eaa-9fa0-0e6b7837e4de": {
+          "type": "text_block",
+          "settings": {
+            "usp_link": "",
+            "default_logo_svg": "natural.svg",
+            "usp-heading": "GOOD PRICE",
+            "usp-text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,"
+          }
+        },
+        "fddcb30f-3f88-4096-95a4-15f3b1ddcff3": {
+          "type": "text_block",
+          "settings": {
+            "usp_link": "",
+            "default_logo_svg": "natural.svg",
+            "usp-heading": "BEST QUALITY",
+            "usp-text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,"
+          }
+        }
+      },
+      "block_order": [
+        "8b7e4d59-86dd-4c9c-820b-582d2c64a7b0",
+        "ce2a1226-45c8-4eaa-9fa0-0e6b7837e4de",
+        "fddcb30f-3f88-4096-95a4-15f3b1ddcff3"
+      ],
+      "settings": {
+        "width": 100,
+        "mobile-width": 30
+      }
+    },
+    "16392010754d80318f": {
+      "type": "text-and-image",
+      "settings": {
+        "background-color": false,
+        "space_above": true,
+        "space_below": true,
+        "image": "shopify:\/\/shop_images\/cafe-patio.jpg",
+        "image_width": 700,
+        "subtitle": "",
+        "title": "Image with text",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+        "button_label": "Order now",
+        "button_link": "shopify:\/\/collections\/cny",
+        "button_style": "primary",
+        "align_text": "left",
+        "layout": "left",
+        "divider": false
+      }
+    },
+    "1639980261e76199ff": {
+      "type": "promo-grid",
+      "blocks": {
+        "16399802605426a5cb-0": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "Limited time",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_size": 100,
+            "text_align": "vertical-center horizontal-center",
+            "focal_point": "center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        },
+        "16399802605426a5cb-1": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "Limited time",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_size": 100,
+            "text_align": "vertical-center horizontal-center",
+            "focal_point": "center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        }
+      },
+      "block_order": [
+        "16399802605426a5cb-0",
+        "16399802605426a5cb-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": true
+      }
+    },
+    "16392030076750028a": {
+      "type": "featured-product",
+      "blocks": {
+        "1639203007660ecc3c-0": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "1639203007660ecc3c-1": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "1639203007660ecc3c-2": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "color_swatches": false
+          }
+        },
+        "1639203007660ecc3c-3": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": true
+          }
+        }
+      },
+      "block_order": [
+        "1639203007660ecc3c-0",
+        "1639203007660ecc3c-1",
+        "1639203007660ecc3c-2",
+        "1639203007660ecc3c-3"
+      ],
+      "settings": {
+        "background-color": true,
+        "space_above": true,
+        "space_below": true,
+        "featured_product": "dr-peanut-butter-almond-butter",
+        "sku_enable": false,
+        "image_position": "left",
+        "image_size": "medium",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "16392017332be2cf60": {
+      "type": "text-and-image",
+      "settings": {
+        "background-color": false,
+        "space_above": true,
+        "space_below": true,
+        "image": "shopify:\/\/shop_images\/collection2.jpg",
+        "image_width": 700,
+        "subtitle": "",
+        "title": "",
+        "text": "<p><strong>This is your heading text.<\/strong><\/p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor<\/p><p><strong>This is your heading text.<\/strong><\/p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "layout": "right",
+        "divider": false
+      }
+    },
+    "16401481920a065c4e": {
+      "type": "countdown-bar",
+      "settings": {
+        "banner-bg-color": "#ffdd04",
+        "space_above": true,
+        "space_below": true,
+        "image": "shopify:\/\/shop_images\/Untitled-2.png",
+        "image_width": 700,
+        "subtitle": "sale fever",
+        "title": "20% OFF everything",
+        "timer_date": "Jan 26, 2022 12:00",
+        "text": "<p>Offer ends in<\/p>",
+        "button_label": "Discover more",
+        "button_link": "shopify:\/\/collections",
+        "align_text": "left",
+        "layout": "right",
+        "divider": false
+      }
+    },
+    "1639202026dc90c56a": {
+      "type": "featured-collection",
+      "settings": {
+        "background-color": true,
+        "space_above": true,
+        "space_below": true,
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "title": "Featured collection",
+        "home_featured_products": "angus",
+        "title-2": "Featured collection",
+        "home_featured_products-2": "",
+        "title-3": "",
+        "home_featured_products-3": ""
+      }
+    },
+    "1639205596f4586fcc": {
+      "type": "contact-form",
+      "settings": {
+        "title": "C0NTACT US IF YOU HAVE QUESTION",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,<\/p>",
+        "show_phone": true,
+        "narrow_column": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1639197697dffa3622",
+    "16392010754d80318f",
+    "1639980261e76199ff",
+    "16392030076750028a",
+    "16392017332be2cf60",
+    "16401481920a065c4e",
+    "1639202026dc90c56a",
+    "1639205596f4586fcc"
+  ]
+}

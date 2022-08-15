@@ -1,0 +1,409 @@
+
+
+{%- assign collection = collections[section.settings.home_featured_products] -%}
+{%- assign collection-2 = collections[section.settings.home_featured_products-2]  -%}
+{%- assign collection-3 = collections[section.settings.home_featured_products-3]  -%} 
+{%- assign collection-4 = collections[section.settings.home_featured_products-4]  -%}
+{%- assign collection-5 = collections[section.settings.home_featured_products-5]  -%} 
+{%- assign title_output = collection.title | escape -%}
+{%- assign title_output-2 = collection-2.title | escape -%} 
+{%- assign title_output-3 = collection-3.title | escape  -%}
+{%- assign title_output-4 = collection-4.title | escape -%} 
+{%- assign title_output-5 = collection-5.title | escape  -%}
+{%- assign tab-content-img = section.settings.image -%}
+{%- assign tab-content-img-2 = section.settings.image-2 -%} 
+{%- assign tab-content-img-3 = section.settings.image-3 -%} 
+{%- assign tab-content-img-4 = section.settings.image-4 -%} 
+{%- assign tab-content-img-5 = section.settings.image-5 -%}  
+  
+    <div
+      id="CollectionSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="collection-template">
+    <div class="page-width {% if section.settings.space_below %} promo-grid--space-bottom{% endif %} ">
+        <div class="page-width--flush-small">
+            <div class="grid-overflow-wrapper">
+                <ul class="tabs tabs-menu" data-aos="overflow__animation">     
+                    <li class="tab tab-menu active" data-content-id="tab-content-1">
+                        <div class="tab-menu--icon">
+                            <div class="tab-menu--icon">
+                                {%- assign tab_icon = section.settings.default_logo_svg -%} 
+                                {%- assign img_url = tab_icon -%}
+                                {%- assign logo_default_type = 'svg' -%}  
+                                <img class="lazyload"
+                                data-src="{{ img_url | asset_url | split: '?' | first}}"
+                                data-sizes="auto"
+                                img_type: logo_default_type >
+                            </div> 
+                            <div class="section-header__title">
+                                {{ title_output }}
+                            </div>         
+                    </li>
+                    {%- for i in (2..5) -%} 
+                    {%- capture title_output -%}title_output-{{ i }}{%- endcapture -%} 
+                    {%- assign tab_icon-2 = section.settings.default_logo_svg-2 -%}  
+                    {%- assign tab_icon-3 = section.settings.default_logo_svg-3 -%} 
+                    {%- assign tab_icon-4 = section.settings.default_logo_svg-4 -%}  
+                    {%- assign tab_icon-5 = section.settings.default_logo_svg-5 -%} 
+                    {%- capture tab_icon -%} tab_icon-{{ i }}{%- endcapture -%} 
+                      <li class="tab tab-menu" data-content-id="tab-content-{{ i }}">
+                        <div class="tab-menu--icon">
+                            {%- assign img_url = [tab_icon] -%}
+                            {%- assign logo_default_type = 'svg' -%}  
+                            <img class="lazyload"
+                                data-src="{{ img_url | asset_url | split: '?' | first}}"
+                                data-sizes="auto"
+                                img_type: logo_default_type >
+                        </div>        
+                            <div class="section-header__title">
+                                {{ [title_output] }}
+                            </div>
+                      </li>
+                    {%- endfor -%}       
+                  </ul>
+            </div>
+        </div>
+      <div id="tab-content-1" class="tab-content active">           
+        <div class="page-width"> 
+            {%- assign title_output = collection.title | escape -%}
+            <div class="tab-content--header small--hide">
+                <div class="tab-content--active-menu">
+                    <div class="tab-menu--icon">
+                        {%- assign tab_icon = section.settings.default_logo_svg -%} 
+                        {%- assign img_url = tab_icon -%}
+                        {%- assign logo_default_type = 'svg' -%}  
+                        <img class="lazyload"
+                            data-src="{{ img_url | asset_url | split: '?' | first}}"
+                            data-sizes="auto"
+                            img_type: logo_default_type >
+                    </div> 
+                    <div class="section-header__title">
+                        {{ title_output }}
+                    </div>
+                </div>             
+            </div>
+            {%- if collection.description contains "<!--extra-info-->" -%}
+                <div class="tab--header-extra-info small--hide">
+                {{ collection.description | split: '<!--extra-info-->' | last }}
+                </div>
+            {%- endif -%}              
+         
+            <div class="grid grid--uniform grid--menu-list" data-aos="overflow__animation">
+              <div class="grid__item grid__item--ad medium-up--one-quarter">
+                {%- if tab-content-img != blank -%}            
+                <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: tab-content-img.aspect_ratio }}%;">
+                    {%- assign img_url = tab-content-img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                    <img class="feature-row__image lazyload"
+                        data-src="{{ img_url }}"
+                        data-widths="[180, 360, 540, 750, 900, 1080]"
+                        data-aspectratio="{{tab-content-img.aspect_ratio }}"
+                        data-sizes="auto"
+                        alt="{{ tab-content-img.alt }}">
+                </div>                               
+            {%- endif -%}
+              </div>
+              <div class="grid__item grid--tab-item medium-up--three-quarters">
+                {%- for product in collections[section.settings.home_featured_products].products -%}
+                {%- render 'cafe-bakery-product-grid-item', product: product -%}
+              {%- endfor -%}
+              </div>            
+            </div>
+          
+        </div>
+        
+      </div>
+      {%- for i in (2..5) -%} 
+      {%- capture collection_option -%}collection-{{ i }}{%- endcapture -%}
+      {%- capture title_output -%}title_output-{{ i }}{%- endcapture -%} 
+      {%- capture tab_icon -%} tab_icon-{{ i }}{%- endcapture -%}
+      {%- capture tab-content-img -%} tab-content-img-{{ i }}{%- endcapture -%}  
+      <div id="tab-content-{{i}}" class="tab-content"> 
+        <div class="page-width">
+            <div class="tab-content--header small--hide">
+                <div class="tab-content--active-menu">
+                    <div class="tab-menu--icon">
+                        {%- assign img_url = [tab_icon] -%}
+                        {%- assign logo_default_type = 'svg' -%}  
+                        <img class="lazyload"
+                            data-src="{{ img_url | asset_url | split: '?' | first}}"
+                            data-sizes="auto"
+                            img_type: logo_default_type >
+                    </div> 
+                    <div class="section-header__title">
+                        {{ [title_output] }}
+                    </div>
+                </div>             
+            </div>
+            {%- if [collection_option].description contains "<!--extra-info-->" -%}
+                <div class="tab--header-extra-info small--hide">
+                {{[collection_option].description | split: '<!--extra-info-->' | last }}
+                </div>
+            {%- endif -%}  
+            <div class="grid grid--uniform grid--menu-list" data-aos="overflow__animation">
+                <div class="grid__item medium-up--one-quarter">
+                    {%- if [tab-content-img] != blank -%}            
+                    <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: [tab-content-img].aspect_ratio }}%;">
+                        {%- assign img_url = [tab-content-img] | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                        <img class="feature-row__image lazyload"
+                            data-src="{{ img_url }}"
+                            data-widths="[180, 360, 540, 750, 900, 1080]"
+                            data-aspectratio="{{ [tab-content-img].aspect_ratio }}"
+                            data-sizes="auto"
+                            alt="{{ [tab-content-img].alt }}">
+                    </div>                               
+                {%- endif -%}
+                </div>
+                <div class="grid__item grid--tab-item medium-up--three-quarters">
+                    {%- for product in [collection_option].products -%}
+                        {%- render 'cafe-bakery-product-grid-item', product: product-%}
+                    {%- endfor -%}
+                </div>  
+            </div>
+          
+        </div>
+
+      </div>
+    {%- endfor -%}      
+    </div>
+ 
+</div>
+{%- if settings.quick_shop_enable -%}
+  {%- for product in collections[section.settings.home_featured_products].products limit: product_limit -%}
+    {%- render 'quick-shop-modal', product: product -%}
+  {%- endfor -%}
+{%- endif -%}
+
+
+
+{% schema %}
+  {
+    "name": "Cafe Bakery",
+    "class": "index-section",
+    "settings": [
+  
+        {
+          "type": "checkbox",
+          "id": "space_below",
+          "label": "Add bottom spacing",
+          "default": true
+        },
+   
+    {
+      "type": "checkbox",
+      "id": "mobile_scrollable",
+      "label": "Enable swipe on mobile",
+      "default": true
+    },
+  
+    {
+      "type": "header",
+      "content": "Collection 1"
+    },
+    {
+        "type": "select",
+        "id": "default_logo_svg",
+        "label": "Icon",
+        "options": [
+          {
+            "value": "icon-pizza.svg",
+            "label": "Pizza"
+          },
+          {
+            "value": "icon-burger.svg",
+            "label": "Burger"
+          },
+          {
+            "value": "icon-snack.svg",
+            "label": "Snacks & Sides"
+          },
+          {
+            "value": "icon-salads.svg",
+            "label": "Salads"
+          },
+          {
+            "value": "icon-drink.svg",
+            "label": "Drink"
+          }
+        ]
+      },
+     
+      {
+        "type": "collection",
+        "id": "home_featured_products",
+        "label": "Collection 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image tab active add"
+      },
+      {
+        "type": "header",
+        "content": "Collection 2"
+      },
+      {
+        "type": "select",
+        "id": "default_logo_svg-2",
+        "label": "Icon",
+        "options": [
+          {
+            "value": "icon-pizza.svg",
+            "label": "Pizza"
+          },
+          {
+            "value": "icon-burger.svg",
+            "label": "Burger"
+          },
+          {
+            "value": "icon-snack.svg",
+            "label": "Snacks & Sides"
+          },
+          {
+            "value": "icon-salads.svg",
+            "label": "Salads"
+          },
+          {
+            "value": "icon-drink.svg",
+            "label": "Drink"
+          }
+        ]
+      },
+        {
+          "type": "collection",
+          "id": "home_featured_products-2",
+          "label": "Collection 2"
+        },
+        {
+            "type": "image_picker",
+            "id": "image-2",
+            "label": "Image tab 2 ad"
+          },
+        {
+            "type": "header",
+            "content": "Collection 3"
+          },
+          {
+            "type": "select",
+            "id": "default_logo_svg-3",
+            "label": "Icon",
+            "options": [
+              {
+                "value": "icon-pizza.svg",
+                "label": "Pizza"
+              },
+              {
+                "value": "icon-burger.svg",
+                "label": "Burger"
+              },
+              {
+                "value": "icon-snack.svg",
+                "label": "Snacks & Sides"
+              },
+              {
+                "value": "icon-salads.svg",
+                "label": "Salads"
+              },
+              {
+                "value": "icon-drink.svg",
+                "label": "Drink"
+              }
+            ]
+          },
+        {
+          "type": "collection",
+          "id": "home_featured_products-3",
+          "label": "Collection 3"
+        },
+        {
+            "type": "image_picker",
+            "id": "image-3",
+            "label": "Image tab 3 ad"
+          },
+        {
+            "type": "header",
+            "content": "Collection 4"
+          },
+          {
+            "type": "select",
+            "id": "default_logo_svg-4",
+            "label": "Icon",
+            "options": [
+              {
+                "value": "icon-pizza.svg",
+                "label": "Pizza"
+              },
+              {
+                "value": "icon-burger.svg",
+                "label": "Burger"
+              },
+              {
+                "value": "icon-snack.svg",
+                "label": "Snacks & Sides"
+              },
+              {
+                "value": "icon-salads.svg",
+                "label": "Salads"
+              },
+              {
+                "value": "icon-drink.svg",
+                "label": "Drink"
+              }
+            ]
+          },
+        {
+          "type": "collection",
+          "id": "home_featured_products-4",
+          "label": "Collection 4"
+        },
+        {
+            "type": "image_picker",
+            "id": "image-4",
+            "label": "Image tab 4 ad"
+          },
+        {
+            "type": "header",
+            "content": "Collection 5"
+          },
+          {
+            "type": "select",
+            "id": "default_logo_svg-5",
+            "label": "Icon",
+            "options": [
+              {
+                "value": "icon-pizza.svg",
+                "label": "Pizza"
+              },
+              {
+                "value": "icon-burger.svg",
+                "label": "Burger"
+              },
+              {
+                "value": "icon-snack.svg",
+                "label": "Snacks & Sides"
+              },
+              {
+                "value": "icon-salads.svg",
+                "label": "Salads"
+              },
+              {
+                "value": "icon-drink.svg",
+                "label": "Drink"
+              }
+            ]
+          },
+        {
+          "type": "collection",
+          "id": "home_featured_products-5",
+          "label": "Collection 5"
+        },
+        {
+            "type": "image_picker",
+            "id": "image-5",
+            "label": "Image tab 5 ad"
+          } 
+    ],
+    "presets": [{
+      "name": "Cafe Bakery"
+    }],
+    "blocks" : []
+  }
+{% endschema %}
+

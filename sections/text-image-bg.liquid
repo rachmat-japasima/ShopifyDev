@@ -1,0 +1,79 @@
+ <div class="page-width direct-to-boot--header" id="direct-to-boot" >
+    {%- style -%}
+    .direct-to-boot--header{
+      background-color:{{section.settings.bg-color}};
+    }
+    @media only screen and (min-width:769px){
+      .direct-to-boot--header{
+        background-image: url({{ section.settings.image | img_url: '482x482' }});
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: contain; 
+      }
+    }
+
+    {%- endstyle -%}
+    <div class="medium-up--one-third direct-to-boot-container" data-aos>
+        {%- if section.settings.title != blank -%}
+            <div class="h1 appear-delay{% cycle '','-1','-2','-3','-4' %}">{{ section.settings.title | escape }}</div>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+            <div class="rte appear-delay{% cycle '','-1','-2','-3','-4' %}">{{ section.settings.text }}</div>
+        {%- endif -%}
+        {%- if section.settings.button_label != blank  -%}
+              <div class="appear-delay{% cycle '','-1','-2','-3','-4' %} button-link">
+                <a href="{{ section.settings.button_link }}" class="btn--rounded btn--white">
+                  {{ section.settings.button_label }}
+                </a>
+              </div>
+        {%- endif -%}
+    </div>   
+</div>
+
+{% schema %}
+    {
+        "name": "Text Image Background",
+        "settings": [
+        {
+          "type": "color",
+          "id": "bg-color",
+          "label": "Section background color",
+          "default":"#2F5325"
+        },       
+         {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Background Image"
+          }, 
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Image with text"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }
+                
+        ],
+        "presets": [
+          {
+            "name": "Text Image Background"
+          }
+        ]
+    }
+{% endschema %}
+    

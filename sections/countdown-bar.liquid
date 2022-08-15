@@ -1,0 +1,235 @@
+
+{%- style -%}
+.cowndown-promotion {
+    background-color: {{ section.settings.banner-bg-color }};
+}
+@media only screen and (min-width:769px){
+    .feature-row__item img{
+        width: {{ section.settings.image_width }}px;
+    }
+}
+@media only screen and (max-width:768px){
+    .feature-row__item img{
+        width: {{ section.settings.image_width | times: 0.6}}px;
+    }     
+}
+        
+{%- endstyle -%}
+ 
+      <div class="page-width cowndown-promotion feature-row-wrapper {% if section.settings.space_above %} promo-grid--space-top{% endif %}{% if section.settings.space_below %} promo-grid--space-bottom{% endif %}" >
+        {%- capture image_layout -%}
+          <div class="feature-row__item"  data-aos>
+              {%- if section.settings.image != blank -%}
+                    <div style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image.aspect_ratio }}%;" >
+                      {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                      <img class="feature-row__image lazyload"
+                        data-src="{{ img_url }}"
+                        data-widths="[180, 360, 540, 750, 900, 1080]"
+                        data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+                        data-sizes="auto"
+                        alt="{{ section.settings.image.alt }}">
+                    </div>
+              {%- endif -%}
+              {%- if section.settings.image == blank -%}
+                  <div class="image-wrap">
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+
+              {%- endif -%}
+          </div>
+        {%- endcapture -%}
+    
+        <div class="feature-row">
+          {%- if section.settings.layout == 'left' -%}
+            {{ image_layout }}
+          {%- endif -%}
+    
+          <div class="feature-row__item feature-row__text--{{ section.settings.layout }} " data-aos>
+            {%- if section.settings.subtitle != blank -%}
+              <div class="subheading appear-delay{% cycle '','-1','-2','-3','-4' %}" style="background-color: {{ section.settings.banner-bg-color }}">{{ section.settings.subtitle }}</div>
+            {%- endif -%}
+            {%- if section.settings.title != blank -%}
+              <div class="h1 appear-delay{% cycle '','-1','-2','-3','-4' %}">{{ section.settings.title | escape }}</div>
+            {%- endif -%}
+            {%- if section.settings.text != blank -%}
+            <div class="appear-delay{% cycle '','-1','-2','-3','-4' %}">{{ section.settings.text }}</div>
+            {%- endif -%}
+            
+                <div class="timer-display">
+                    <div class="timer-block timer-days">
+                      <span class="timer-block__num js-timer-days">00</span>
+                      <span class="timer-block__unit">Day</span>
+                    </div>
+                    <div class="timer-block timer-hours">
+                      <span class="timer-block__num js-timer-hours">00</span>
+                      <span class="timer-block__unit">Hour</span>
+                    </div>
+                    <div class="timer-block timer-minutes">
+                      <span class="timer-block__num js-timer-minutes">00</span>
+                      <span class="timer-block__unit">Minutes</span>
+                    </div>
+                    <div class="timer-block timer-seconds small--hide">
+                      <span class="timer-block__num js-timer-seconds">00</span>
+                      <span class="timer-block__unit">Second</span>
+                    </div>
+                  </div>
+                  
+            {%- if section.settings.button_label != blank -%}
+              <div class="appear-delay{% cycle '','-1','-2','-3','-4' %}">
+                <a href="{{ section.settings.button_link }}" class="btn">
+                  {{ section.settings.button_label }}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+    
+          {%- if section.settings.layout == 'right' -%}
+            {{ image_layout }}
+          {%- endif -%}
+        </div>
+      </div>
+    
+
+    <script type="text/javascript">
+
+        var second = 1000,
+            minute = second * 60,
+            hour = minute * 60,
+            day = hour * 24;
+        var countDown = new Date({{ section.settings.timer_date | json }}).getTime(),
+            x = setInterval(function() {
+            var now = new Date().getTime(),
+                distance = countDown - now;
+                document.querySelector('.js-timer-days').innerText = Math.floor(distance / (day)),
+                document.querySelector('.js-timer-hours').innerText = Math.floor((distance % (day)) / (hour)),
+                document.querySelector('.js-timer-minutes').innerText = Math.floor((distance % (hour)) / (minute)),
+                document.querySelector('.js-timer-seconds').innerText = Math.floor((distance % (minute)) / second);
+    
+              if($(".js-timer-days").text() == "-1") {
+                 $('body').addClass("hide-counter");
+              }
+          }, second)
+        
+      </script>
+       
+    {% schema %}
+      {
+        "name": "Cowndown promotion",
+        "settings": [
+        {
+          "type": "color",
+          "id": "banner-bg-color",
+          "label": "Section background color"
+        },
+        {
+          "type": "checkbox",
+          "id": "space_above",
+          "label": "Add top spacing",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "space_below",
+          "label": "Add bottom spacing",
+          "default": true
+        },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+
+          {
+            "type": "range",
+            "id": "image_width",
+            "label": "Image width",
+            "default": 700,
+            "min": 200,
+            "max": 700,
+            "step": 10,
+            "unit": "px"
+          },
+          {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subheading"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "timer_date",
+            "label": "End date and time ",
+            "info": "Format: Sept 30, 2021 00:00"
+        },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          },
+  
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          },
+        
+          {
+            "type": "select",
+            "id": "align_text",
+            "label": "Text alignment",
+            "default": "left",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Centered"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "layout",
+            "label": "Layout",
+            "default": "right",
+            "options": [
+              {
+                "value": "left",
+                "label": "Image on left"
+              },
+              {
+                "value": "right",
+                "label": "Image on right"
+              }
+            ]
+          },
+          {
+            "type": "checkbox",
+            "id": "divider",
+            "label": "Show section divider",
+            "default": false
+          }
+        ],
+        "presets": [
+          {
+            "name": "Cowndown bar"
+          }
+        ]
+      }
+    {% endschema %}
+    

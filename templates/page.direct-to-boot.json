@@ -1,0 +1,144 @@
+{
+  "sections": {
+    "main": {
+      "type": "text-image-bg",
+      "settings": {
+        "bg-color": "#5e782a",
+        "image": "shopify:\/\/shop_images\/ABrnlFGB.jpg",
+        "title": "Direct to Boot & Pick up",
+        "text": "<p>Get groceries straight to your boot or Pick up in store. We’ll pick, pack and check your groceries, so they’re ready for you to pick up at a time that suits you.<\/p>",
+        "button_label": "Join As Member Today",
+        "button_link": "shopify:\/\/pages\/rewards-program-page"
+      }
+    },
+    "direct-to-boot-menu": {
+      "type": "direct-to-boot-menu",
+      "blocks": {
+        "af2082dc-0c10-4f83-b2c7-b87face0b41c": {
+          "type": "text_block",
+          "settings": {
+            "nav-link-label": "Direct to boot & Pickup",
+            "nav-link": "direct-to-boot-pick-up"
+          }
+        },
+        "3b145fe6-79e2-4b8d-9c56-d0634c59439e": {
+          "type": "text_block",
+          "settings": {
+            "nav-link-label": "Pricing",
+            "nav-link": "direct-to-boot-pricing"
+          }
+        }
+      },
+      "block_order": [
+        "af2082dc-0c10-4f83-b2c7-b87face0b41c",
+        "3b145fe6-79e2-4b8d-9c56-d0634c59439e"
+      ],
+      "settings": {
+        "background-color": false
+      }
+    },
+    "direct-to-boot-pick-up": {
+      "type": "direct-to-boot-pick-up",
+      "blocks": {
+        "2954279a-2a4e-4ce7-9ae7-bb36e5ac1e4d": {
+          "type": "text_block",
+          "settings": {
+            "layout": "left",
+            "image": "shopify:\/\/shop_images\/20220126-Surreyhills15136.jpg",
+            "image_width": 510,
+            "block-title": "Collect at the in store service desk",
+            "block-text": "<p><strong>- Order online<\/strong><\/p><p>Start shopping on our products and specials.<\/p><p><strong>- Choose when you want to collect<\/strong><\/p><p>Lock in your collection timeslot after building your cart. <\/p><p><strong>Tell us when you’re on your way<\/strong><\/p><p><\/p><p>We’ll SMS you when your order is ready, and you can notify us when you’re done after dining in or checking out more of our groceries in-store. Bring your ID and order number to the service desk and we'll bring your groceries to you.<\/p>"
+          }
+        },
+        "12a8fc87-2b75-42ba-b75e-2a57c3ae84da": {
+          "type": "text_block",
+          "settings": {
+            "layout": "left",
+            "image": "shopify:\/\/shop_images\/20220126-Surreyhills14859_f46d49d9-1e9d-45fd-8a9a-116787466848.jpg",
+            "image_width": 510,
+            "block-title": "You don't even need to get out of your car",
+            "block-text": "<p><strong>- Order online <\/strong><\/p><p>Start shopping our products and specials.<\/p><p><strong>- Choose when you want to collect<\/strong><\/p><p>Lock in your collection timeslot before building your cart. We’ll reserve it for 2hrs.<\/p><p><strong>- Tell us when you’re ready<\/strong><\/p><p>We’ll SMS you when your order is ready, and you can notify us when you’re 15mins away.  Make sure you bring your ID and order number, and we'll place your groceries in your car's boot.<\/p><p><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "2954279a-2a4e-4ce7-9ae7-bb36e5ac1e4d",
+        "12a8fc87-2b75-42ba-b75e-2a57c3ae84da"
+      ],
+      "settings": {
+        "background-color": false,
+        "title": "How it works",
+        "text": "Concierge Service For Members Only"
+      }
+    },
+    "direct-to-boot-pricing": {
+      "type": "direct-to-boot-pricing",
+      "settings": {
+        "background-color": true,
+        "title": "How much does it cost?",
+        "text": "Self pick-up and direct-to-boot services are free of charge with minimum $30 spend on groceries.",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "direct-to-boot-faq": {
+      "type": "direct-to-boot-faq",
+      "disabled": true,
+      "blocks": {
+        "b81a41c0-6002-4d23-b577-c16c27e41698": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+          }
+        },
+        "e80a4e00-92b9-4370-bf2f-08bb5efc3a69": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+          }
+        },
+        "d20075d5-0a54-467d-b7e2-f5b2c28cfb30": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+          }
+        },
+        "243eb793-c39a-48b5-92c4-2ad8abc4f750": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+          }
+        },
+        "6efbecf4-6359-440c-ae43-a19a643b7f76": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b81a41c0-6002-4d23-b577-c16c27e41698",
+        "e80a4e00-92b9-4370-bf2f-08bb5efc3a69",
+        "d20075d5-0a54-467d-b7e2-f5b2c28cfb30",
+        "243eb793-c39a-48b5-92c4-2ad8abc4f750",
+        "6efbecf4-6359-440c-ae43-a19a643b7f76"
+      ],
+      "settings": {
+        "background-color": false,
+        "title": "Frequently Asked Questions"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "direct-to-boot-menu",
+    "direct-to-boot-pick-up",
+    "direct-to-boot-pricing",
+    "direct-to-boot-faq"
+  ]
+}

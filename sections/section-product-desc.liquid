@@ -1,0 +1,62 @@
+<div class="page-width 
+      {% if section.settings.space_above %} promo-grid--space-top{% endif %}{% if section.settings.space_below %} promo-grid--space-bottom {% endif %}"  
+      id="section--product-desc">
+        <div class="grid grid--uniform">
+            <div class="grid__item medium-up--one-half">
+                <div class="section-header__title">
+                    Full description
+                </div>
+                <div class="product--full-desc">
+                    {{ product.description }}
+                </div>
+            </div>
+            <div class="grid__item medium-up--one-half">
+                <div class="pim--item">
+                  {%- if product.metafields.my_fields.ingredient != blank -%}
+                    <div class="section-header__title">
+                        Ingredients
+                    </div>
+                    <div class="rte">
+                        {{product.metafields.my_fields.ingredient}}
+                    </div>
+                  {%- endif -%}
+                </div>
+                <div class="pim--item">
+                  {%- if product.metafields.my_fields.ingredient != blank -%}
+                    <div class="section-header__title">
+                        Nutrition Information
+                    </div>
+                    <div class="rte">
+                        {{product.metafields.my_fields.nutrition_information}}
+                    </div>
+                  {%- endif -%}
+                </div>
+            </div>
+        </div>   
+</div>
+
+{% schema %}
+  {
+    "name": "Product description",
+    "settings": [
+    {
+        "type": "checkbox",
+        "id": "space_above",
+        "label": "Add top spacing",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "space_below",
+        "label": "Add bottom spacing",
+        "default": true
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product description"       
+      }
+    ]
+  }
+{% endschema %}
+

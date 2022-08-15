@@ -1,0 +1,36 @@
+<div class="list--contact-box">
+  <div class="contact-box--image">
+    {%- if section.settings.image != blank -%}
+      {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}<a href="{{ section.settings.button_link }}">{%- endif -%}
+        <div style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image.aspect_ratio }}%;">
+          {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="feature-row__image lazyload"
+            data-src="{{ img_url }}"
+            data-widths="[180, 360, 540, 750, 900, 1080]"
+            data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+            data-sizes="auto"
+            alt="{{ section.settings.image.alt }}">
+        </div>
+      {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}</a>{%- endif -%}
+  {%- endif -%}
+  </div>
+  <div class="box-text--container text-center">
+    {%- if section.settings.headline != blank -%}
+      <div class="contact-box--headline">
+        {{section.settings.headline}}
+      </div>
+    {%- endif -%}
+  {%- if section.settings.text != blank -%}
+      <div class="contact-box--text">
+        {{section.settings.text}}
+      </div>
+  {%- endif -%}
+  {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+  <div class="contact-box--button">
+    <a  class="btn" href="{{ section.settings.button_link }}">{{section.settings.button_label}}</a>
+  </div>
+{%- endif -%}
+  </div>
+</div>
+
+

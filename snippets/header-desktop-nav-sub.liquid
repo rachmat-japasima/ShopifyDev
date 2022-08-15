@@ -1,0 +1,80 @@
+
+{%- liquid
+    unless limit
+      assign limit = sub_menu.links.size
+    endunless
+    unless offset
+      assign offset = 0
+    endunless
+  -%}
+  
+  <ul
+    class="site-nav site-navigation--sub small--hide"
+    {% unless disable_aria %}
+      role="navigation" aria-label="Primary"
+    {% endunless %}>
+    {%- for link in sub_menu.links limit: limit offset: offset -%}
+      {%- liquid
+        assign has_dropdown = false
+        assign is_megamenu = false
+        if link.links != blank
+          assign has_dropdown = true
+          if link.levels > 1
+            assign is_megamenu = true
+          endif
+        endif
+      -%}
+
+      <li
+        class="site-nav__item site-nav__expanded-item{% if has_dropdown %} site-nav--has-dropdown{% endif %}{% if is_megamenu %} site-nav--is-megamenu{% endif %}"
+        {% if has_dropdown %}aria-haspopup="true"{% endif %}>  
+        <a href="{{ link.url }}" class="site-nav__link site-nav__link--icon {% if has_dropdown %} site-nav__link--has-dropdown{% endif %}">
+          {% if link.title == "Register" %}
+            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-user" viewBox="0 0 64 64"><path d="M35 39.84v-2.53c3.3-1.91 6-6.66 6-11.41 0-7.63 0-13.82-9-13.82s-9 6.19-9 13.82c0 4.75 2.7 9.51 6 11.41v2.53c-10.18.85-18 6-18 12.16h42c0-6.19-7.82-11.31-18-12.16z"/></svg> 
+            {% if customer %}
+              <span class="icon__fallback-text">{{ customer.name }}</span>
+            {% else %}
+              <span class="icon__fallback-text">{{ link.title }}</span>
+            {% endif %}
+            {% else %}
+              <span class="icon__fallback-text">{{ link.title }}</span>
+          {% endif %}
+        </a>
+        {%- if has_dropdown -%}
+        <ul class="site-nav__dropdown site-sub-nav__dropdown text-left">
+            {%- for childlink in link.links -%}
+              {%- liquid
+                assign has_sub_dropdown = false
+                if childlink.links != blank
+                  assign has_sub_dropdown = true
+                endif
+              -%}
+                    
+
+              {% if customer %}
+                <li>
+                  <a href="{{ childlink.url }}" class="{% if childlink.title == "New customer? Join now" or childlink.title == "Login" or childlink.title == "New B2B customer? Join now"%}button--hide{% endif %} {% if childlink.title == "Log out"%} register-button {% endif %}site-nav__dropdown-link ">
+                  {{ childlink.title | escape }} 
+                  </a>
+                </li>
+              {% else %}
+                  <li>
+                    <a href="{{ childlink.url }}" class="{% if childlink.title == "Login"%}register-button{% endif %} {% if childlink.title == "Log out" or childlink.title == "My Address" or childlink.title == "My orders" or childlink.title == "Check balance" or childlink.title == "Rewards"%} button--hide {% endif %} {% if childlink.title == "New customer? Join now"%}mobile-nav--tooltip{% endif %} site-nav__dropdown-link ">
+                    {{ childlink.title | escape }} 
+                     {% if childlink.title == "New customer? Join now"%}
+                     <div class="tooltip-register"><i class="fa fa-info sub-menu-icon"></i>
+                      <span class="tooltiptext">Get $5 for 50$</span>
+                    </div> 
+                      {% endif %} 
+                    </a>
+                  
+                   </li>
+              {% endif %}
+
+            {%- endfor -%}
+          </ul>
+        {%- endif-%}
+    </li>
+    {%- endfor -%}
+  </ul>
+  

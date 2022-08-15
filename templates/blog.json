@@ -1,0 +1,77 @@
+{
+  "sections": {
+    "main": {
+      "type": "blog-template",
+      "settings": {
+        "blog_show_tag_filter": false,
+        "blog_show_rss": false,
+        "blog_show_tags": false,
+        "blog_show_date": true,
+        "blog_show_comments": true,
+        "blog_show_author": false,
+        "blog_show_excerpt": false,
+        "blog_image_size": "wide"
+      }
+    },
+    "1645593523e6f3290b": {
+      "type": "text-columns",
+      "disabled": true,
+      "blocks": {
+        "164559352364d3409b-0": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/press-22jpg.jpg",
+            "image_width": 650,
+            "title": "",
+            "text": "<p>New In Town: Surrey Hills Grocer, Jurong – Authentic Australian Grocer & Shopping.<\/p><p>It’s no secret that Singapore is teeming with charming shopping malls and grocery.<\/p>",
+            "button_label": "Read more",
+            "button_link": ""
+          }
+        },
+        "164559352364d3409b-1": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/press-18.jpg",
+            "image_width": 650,
+            "title": "",
+            "text": "<p>Where to eat and drink in Singapore: February.<\/p><p>Eating is mostly social here. Most of us live to eat, often using it as a<br\/> means to a night out with family and friends. Especially—it's <br\/>inevitable to say—with the gradual <a href=\"https:\/\/www.esquiresg.com\/galleries\/leisure-travel-international-fully-vaccinated-green-lane-destination-singapore\/\" target=\"_blank\">resumption of travel<\/a>,<\/p>",
+            "button_label": "Read more",
+            "button_link": ""
+          }
+        },
+        "164559352364d3409b-2": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/press-23.jpg",
+            "image_width": 650,
+            "title": "",
+            "text": "<p>9 to 5: Pang Gek Teng on Leaving Her Banking Job to Open an Australian-Inspired Grocery Store in Singapore<\/p>",
+            "button_label": "Read more",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "164559352364d3409b-0",
+        "164559352364d3409b-1",
+        "164559352364d3409b-2"
+      ],
+      "settings": {
+        "title": "",
+        "divider": false,
+        "space_above": false,
+        "space_below": false,
+        "view_all": false,
+        "view-all-text": "View all",
+        "view-all-link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1645593523e6f3290b"
+  ]
+}

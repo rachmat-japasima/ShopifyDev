@@ -1,0 +1,260 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "164156824659ed5d4d": {
+      "type": "advanced-content",
+      "blocks": {
+        "164156824612f6abc1-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IOcc79Dg.jpg",
+            "link": "",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "164156824612f6abc1-0"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "1641567790b5608b51": {
+      "type": "rich-text",
+      "blocks": {
+        "1641567789dbf5aef3-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p><strong>Singapore, January 2022 – <\/strong>Take a spin and discover an all-new enchanting hidden gem in the West – you’ll find yourself drawn to the rustic charms of <strong>Surrey Hills Grocer<\/strong>, Singapore’s latest gourmet grocer, lifestyle and dining destination that brings the best of Australian produces, products, cuisines and experiences to local consumers. Quaintly nestled at the D’Arena, <strong>Surrey Hills Grocer <\/strong>is also the first grocer in Singapore to offer a direct-to-boot service for a seamless and contactless shopping experience.<\/p>"
+          }
+        },
+        "9f44c50d-9d4a-41f3-9e76-e1bd208dcac6": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>The name ‘Surrey Hills’ is an ode to two eponymous townships that reside in Australia. Inspired by the scenic autumn forest landscapes at the quaint <strong>Surrey Hills town in Melbourne<\/strong>, and finest baked goods at <strong>Surry Hills, an inner-city suburb of Sydney<\/strong> and hip strip known for its vibrant cultural and café scene, <em><strong>Surrey Hills Grocer<\/strong><\/em> was borne of a desire to bring that same tranquil, comfort and delight to Singapore. Tucked away from the bustle of the city, <em><strong>Surrey Hills Grocer’s<\/strong><\/em> location in the quieter areas of Jurong is intentional in re-creating the experience of driving to a farm gate in Australia. Now come and wander as there’s magic in every corner!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1641567789dbf5aef3-1",
+        "9f44c50d-9d4a-41f3-9e76-e1bd208dcac6"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "1641567122ce8b28c3": {
+      "type": "text-and-image-custom",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/20220126-Surreyhills14904_05d75eff-da16-4360-8fac-7ba2ff8a039a.jpg",
+        "image_width": 500,
+        "code": "<i>The local Australian-specialty grocer features a beautifully decked space that houses a gourmet marketplace, alfresco café, artisanal bakery, florist bar and even a pop-up farmers’ market area.<\/i>",
+        "button_label": "",
+        "button_link": "",
+        "align_text": "left",
+        "layout": "right"
+      }
+    },
+    "164156836437090c64": {
+      "type": "rich-text",
+      "blocks": {
+        "164156836410644f41-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Spanning across 3,000 square feet, <strong>Surrey Hills Grocer<\/strong> is built with clean modern lines, and a touch of farm gate rustic that brings you down the memory lane of your fondest Australia road trips. Its entrance exudes a warm and welcoming atmosphere as shoppers are greeted by majestic tiers of wooden arcs overhead that extend into the shop. The arcs are also purposefully illuminated with soft ambient lighting to invoke an imagery of the sun rising over the hills. Incorporating natural wood elements as a running theme, the grocer is flanked by large floor-to-ceiling façade windows that allow natural daylight to pour through its interior. Along with its lush foliage landscaping for a calm, greenery effect, and a refreshing bespoke citrus store scent, <strong>Surrey Hills Grocer<\/strong> offers a multi-sensory experience and a relaxing space for shoppers to slow down, unwind, shop, and dine leisurely.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "164156836410644f41-1"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "1641568461179aaff5": {
+      "type": "advanced-content",
+      "disabled": true,
+      "blocks": {
+        "164156846114a6912a-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20220126-Surreyhills15136.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "164156846114a6912a-1": {
+          "type": "liquid",
+          "settings": {
+            "code": "<p><b>The marketplace includes a Chilled & Fresh Produce section, Grocery Area, \nWinery and Herbs & Spices Corner<\/b><\/p>\n\n<p>A majority of Surrey Hills Grocer products are Australian-made and -grown, with many of them being made available in Singapore for the first time. Some noteworthy exclusive brands include Rich Glen Olive Oil, a family-owned business that produces olive-oil based food and skincare range, Stonebarn Truffle, the largest commercial truffle producer in West Australia, and Koko Black, an iconic premium Australian chocolate that will be making its debut in Singapore. \n\nIn addition, Surrey Hills Grocer also works closely with local urban farm, Straits Agriculture, to harvest fresh produces daily to be sold at its grocer, and to support its farm-to-table concept. \n<\/p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "164156846114a6912a-0",
+        "164156846114a6912a-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "16415686825ffa2531": {
+      "type": "advanced-content",
+      "disabled": true,
+      "blocks": {
+        "1641568682b4769c27-1": {
+          "type": "liquid",
+          "settings": {
+            "code": "With its direct-to-source business model, Surrey Hills Grocer’s products and produces are shipped directly from farmers, growers and brands to the store, allowing the entire supply chain to be transparent, straightward and cost effective. In embracing the spirit of ‘by locals, for locals’, the prices of Australian-sourced goods at Surrey Hills Grocer are benchmarked against actual retail prices in Australia, to ensure it is affordable to local consumers and fair to the people who made it. Beyond that, farmers and brand owners are also given a special spotlight along the aisles of the supermarket, allowing them to share intimately about their brand story. This way, consumers can get to browse, pick and connect with the brands as they come to enjoy them.",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "1641568682b4769c27-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20220126-Surreyhills14964.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "1641568682b4769c27-1",
+        "1641568682b4769c27-0"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "164156955175f5f8db": {
+      "type": "rich-text",
+      "disabled": true,
+      "blocks": {
+        "16415695511a383aa9-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Apart from its <em><strong>Chilled & Fresh Produce section<\/strong><\/em> and <em><strong>Grocery Area<\/strong><\/em>, <em><strong>Surrey Hills Grocer<\/strong><\/em> also has a dedicated <em><strong>Winery<\/strong><\/em> featuring the best wines sourced from Australian vineyards. Another main highlight is the <em><strong>Herbs & Spices Corner<\/strong><\/em>, where consumers can choose up to 24 types of Surrey Hills herb blends. Gone are the days where we purchase multiple herbs and spices for one meal. The Surrey Hills signature blends have been meticulously crafted over a year, by drawing wisdom from the authentic Australian home secret recipes. With its wide variety, the unique blends make home cooking easy and flavourful for time-pressed people. Popular picks include the <strong>‘The Surrey Blend’<\/strong>, an all-in-one marinate for all cooking; <strong>‘Camper’s BBQ Blend’<\/strong>, for all things BBQ; and <strong>‘Surfers Paradise Blend’<\/strong>, a well-loved seasoning with a garlicky seafood kick; that are perfect for seasoned homechefs and amateurs to use and cook up a storm in their kitchens.<\/p><p>Not to be missed is also the beautiful <em><strong>Florist Bar<\/strong><\/em> helmed by award-winning Vancouver-based floral shop, <a href=\"https:\/\/www.instagram.com\/flowerfactory\/?hl=en\"><strong>The Flower Factory<\/strong><\/a>, where shoppers can find an exquisite range of seasonal floral and botanical offerings from Australia and New Zealand, perfect for thoughtful giftings, or enlivening homes.<\/p><p>A favourite spot at the grocer would be the <em><strong>Surrey Hills Café<\/strong><\/em>,  an alfresco dining concept that pays homage to the authetic Australian brunch culture. The menu was designed in collaboration with an Australian Michelin-starred chef based in Singapore, who brought in his locality knowledge and special touch to the cuisines. Consumers can expect the quintessential dishes albeit with a twist, like the Classic Eggs Benedict with Lobster Hollandaise, Sustainable Fish Burger, Air-flown Australian Steak, Souffle Pancakes and more, all done original but elevated. The café serves aromatic brews using beans from one of Australia’s best known coffee brands, <a href=\"https:\/\/www.proudmarycoffee.com.au\/\"><em><strong>Proud Mary Coffee<\/strong><\/em><\/a>, that focuses on sustainable sourcing. Their classic blend, Humbler – a chocolatey coffee with rich caramel notes that goes splendid with milk or plant-based alternatives – is expected to be a hit in Singapore.<\/p><p><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16415695511a383aa9-1"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "1641569555a0dd0d7a": {
+      "type": "advanced-content",
+      "blocks": {
+        "1641569555ed29c364-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ABrnlFGB.jpg",
+            "link": "",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "1641569555ed29c364-0"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "164156998124945efe": {
+      "type": "rich-text",
+      "disabled": true,
+      "blocks": {
+        "1641569981ce58a9da-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>The café also features an indoor <strong>Bakery<\/strong>, that produces the freshest in-house bakes and pastries daily. Foodies alike will be thrilled to know that popular local artisanal brands like <a href=\"https:\/\/creamier.com.sg\/\"><strong>Creamier<\/strong><\/a> and <a href=\"https:\/\/www.sourbombebakery.com\/\"><strong>Sourbombe Bakery<\/strong><\/a> – that align with the spirit of <strong>Surrey Hills Grocer<\/strong> – have also been brought in as part of the café’s tantalising mix. In time, consumers can look forward to more Australian product-centric ice cream flavours that uses air-flown dairy from farms, and even Surrey Hills-exclusive Sourbombe flavours that can be found only at the grocer. “Our big dream is to become the most authentic Australian destination grocer out of Australia, and to a cultivate an inclusive community that connects people from all walks of life through real food,” adds Aiden Ng, co-founder of <strong>Surrey Hills Grocer<\/strong>.<\/p><p>The 38-seater alfresco café makes a great resting spot for families to refuel after a grocery shopping trip, and also offers a laid-back setting for a casual gathering with loved ones and friends. Situated next to the café is a modest pop-up farmers’ market for curious shoppers to scour for other artisanal crafted goods.  <\/p><p>“At <strong>Surrey Hills Grocer<\/strong>, we believe in finding the right partnerships that amplify our brand vision. We have carefully curated and built connections with a group of trusted farmers, brand partners and vendors to bring Singapore customers an Australian-inspired grocer, and lifestyle and dining concept that is truly genuine and sustainable,” says Pang Gek Teng, co-founder of <strong>Surrey Hills Grocer<\/strong>.<\/p><p>“Our big dream is to become the most authentic Australian destination grocer out of Australia, and to a cultivate an inclusive community that connects people from all walks of life through real food,” adds Aiden Ng, co-founder of <strong>Surrey Hills Grocer<\/strong>.<\/p><p><strong>Surrey Hills Grocer<\/strong> is also proud to be the first in Singapore to offer a <strong>direct-to-boot concept<\/strong> in Singapore. The service targets busy folks who do not have the luxury of time to traipse down supermarket aisles to shop, or consumers who simply want to make small purchases without having the need to leave the comforts of their cars. Shoppers can make their purchases online, select a specific date and timeslot, and drive down to have their grocery purchases loaded into their boot at their availability. To support this concept, the grocer has built a sheltered designated parking bay that can allow up to four vehicles at a time. The service is completely contactless, fuss-free and best of all, complimentary. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1641569981ce58a9da-1"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "16415702460df6bf96": {
+      "type": "rich-text",
+      "disabled": true,
+      "blocks": {
+        "1641570246439982a3-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p><em><strong>Surrey Hills Grocer<\/strong><\/em> is also proud to be the first in Singapore to offer a <strong>direct-to-boot concept<\/strong> in Singapore. The service targets busy folks who do not have the luxury of time to traipse down supermarket aisles to shop, or consumers who simply want to make small purchases without having the need to leave the comforts of their cars. Shoppers can make their purchases online, select a specific date and timeslot, and drive down to have their grocery purchases loaded into their boot at their availability. To support this concept, the grocer has built a sheltered designated parking bay that can allow up to four vehicles at a time. The service is completely contactless, fuss-free and best of all, complimentary. <\/p><p>For consumers who prefer door-step delivery, <em><strong>Surrey Hills Grocer<\/strong><\/em> has a flat islandwide delivery fee of S$15 for spending below S$120.<\/p><p>As a brand, <em><strong>Surrey Hills Grocer<\/strong><\/em> stands strongly for sustainability. Its committment is evident, from the way it sources and selects its products and brand partners, to its promotion of fair trade, creation of farm-to-table menu, and use of environmentally-friendly packaging such as paper bags, recycled paper cups and more. <\/p><p>Running groceries errands have never been more gratifying as <em><strong>Surrey Hills Grocer<\/strong><\/em> is a great destination to explore.  Come by to stock your daily necessities, enjoy a hearty meal with good company, and immerse yourself in the very sensorial experience that brings an endearing reminder of the quaint Australian countryside.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1641570246439982a3-1"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "1641570346556697ef": {
+      "type": "rich-text",
+      "disabled": true,
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "164156824659ed5d4d",
+    "1641567790b5608b51",
+    "1641567122ce8b28c3",
+    "164156836437090c64",
+    "1641568461179aaff5",
+    "16415686825ffa2531",
+    "164156955175f5f8db",
+    "1641569555a0dd0d7a",
+    "164156998124945efe",
+    "16415702460df6bf96",
+    "1641570346556697ef"
+  ]
+}

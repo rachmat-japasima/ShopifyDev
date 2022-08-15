@@ -1,0 +1,10 @@
+{% if false %}
+            {% assign excluded_vat_text = "exc. VAT | " %}
+            {% assign included_vat_text = "inc. VAT" %}
+        <div class="bss-b2b-collection-item-vat" data-collection-item-id="{{ product.id }}" data-collection-item-variant-taxable="{{ product.selected_or_first_available_variant.taxable }}" data-collection-item-variant-price="{{ product.selected_or_first_available_variant.price }}" data-collection-item-variant-id="{{ product.selected_or_first_available_variant.id }}">
+        <span class="bss-b2b-product-vat-price-no-vat" data-excluded-vat-text="{{ excluded_vat_text }}">
+        </span>
+        <span class="bss-b2b-product-vat-price-has-vat" data-included-vat-text="{{ included_vat_text }}">
+        </span>
+</div>
+{% endif %}

@@ -1,0 +1,125 @@
+{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
+    <div class="page-width">
+    
+      <div class="grid grid--uniform">
+        {%- liquid
+          assign isEmpty = true
+          if section.blocks.size > 0
+            assign isEmpty = false
+          endif
+        -%}
+    
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign collection = collections[block.settings.collection]
+    
+            case section.settings.per_row
+              when 2
+                assign grid_item_width = 'medium-up--one-half'
+              when 3
+                assign grid_item_width = 'small--one-half medium-up--one-third'
+              when 4
+                assign grid_item_width = 'small--one-half medium-up--one-quarter'
+              when 5
+                assign grid_item_width = 'small--one-half medium-up--one-fifth'
+            endcase
+          -%}
+    
+          <div class="grid__item {{ grid_item_width }}">
+            {%- if block.settings.button_link != blank -%}
+              <a href="{{ block.settings.button_link }}" class="collection-item collection-item--overlaid-box aos-init aos-animate">
+                    {%- endif -%}
+                    {%- if block.settings.image != blank -%}
+                        <div class="text-spacing" style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;">
+                            {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                            <img class="lazyload"
+                                data-src="{{ img_url }}"
+                                data-widths="[180, 360, 540, 720, 900, 1080]"
+                                data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                                data-sizes="auto"
+                                alt="{{ block.settings.image.alt }}">
+                        </div>
+                    {%- else -%}
+                         <div class="image-wrap text-spacing">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+                    {%- endif -%}
+                    <div class="collection-item__title collection-item__title--overlaid-box  collection-item__title--center">
+                        <span>{{block.settings.button_label}}</span>
+                    </div>
+                    {%- if block.settings.button_link != blank -%}
+              </a>
+              {%- endif -%}
+          </div>
+        {%- endfor -%}
+    
+        {%- if isEmpty -%}
+          <div class="page-width">
+            <div class="grid">
+              <div class="grid__item">
+                <div class="rte">
+                  {{ 'home_page.onboarding.no_content' | t }}
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+    
+      </div>
+    </div>
+    
+    {%- if section.settings.divider -%}</div>{%- endif -%}
+    
+    {% schema %}
+      {
+        "name": "Category Box",
+        "max_blocks": 15,
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "divider",
+            "label": "Show section divider",
+            "default": false
+          },
+          {
+            "type": "range",
+            "id": "per_row",
+            "label": "Collections per row",
+            "default": 4,
+            "min": 2,
+            "max": 5,
+            "step": 1
+          }
+
+        ],
+        "blocks": [
+          {
+            "type": "text",
+            "name": "Collection Block",
+            "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+              },
+              {
+                "type": "text",
+                "id": "button_label",
+                "label": "Button label"
+              },
+              {
+                "type": "url",
+                "id": "button_link",
+                "label": "Link"
+                
+              }
+            ]
+          }
+        ],
+        "presets": [
+        {
+            "name": "Category Boxes"
+        }
+    ]
+      }
+    {% endschema %}
+    

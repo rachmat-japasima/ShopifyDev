@@ -1,0 +1,106 @@
+{%- style -%}
+    .dtb--banner-image{
+        width: {{ section.settings.image_width }}px;
+    }
+    @media only screen and (max-width:768px){
+        .dtb--banner-image{
+            width: {{ section.settings.image_width| times: 0.7}}px;
+        }
+       
+    }
+{%- endstyle -%}
+
+<div class="page-width dtb-promotion {% if section.settings.background-color %}section--background-gray {% endif %}" >
+    <div class="grid justify-center">
+        <div class="grid__item medium-up--five-sixths">
+            <div class="dtb-promotion--banner" style="background-color: {{ section.settings.banner-bg-color }}">
+                <div class="feature-row">
+                      <div class="dtb--banner-image" data-aos>
+                          {%- if section.settings.image != blank -%}
+                                <div style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image.aspect_ratio }}%;">
+                                  {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                                  <img class="feature-row__image lazyload"
+                                    data-src="{{ img_url }}"
+                                    data-widths="[180, 360, 540, 750, 900, 1080]"
+                                    data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+                                    data-sizes="auto"
+                                    alt="{{ section.settings.image.alt }}">
+                                </div>
+                            
+                          {%- endif -%}
+                          {%- if section.settings.image == blank -%}
+                            <div>
+                              <div class="image-wrap">
+                                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                      </div>
+                    <div class="feature-row__text--left" data-aos>
+            
+                        {%- if section.settings.title != blank -%}
+                          <div class="h1 appear-delay{% cycle '','-1','-2','-3','-4' %}">{{section.settings.title | escape }}</div>
+                        {%- endif -%}
+                        {%- if section.settings.text != blank -%}
+                          <div class="rte appear-delay{% cycle '','-1','-2','-3','-4' %}">{{ section.settings.text }}</div>
+                        {%- endif -%}
+                      </div>
+
+                    </div>
+                  </div>
+            </div>
+        </div>
+     </div>
+</div>
+{% schema %}
+    {
+        "name": "Direct to boot banner",
+        "settings": [
+            {
+              "type": "checkbox",
+              "id": "background-color",
+              "label": "Section background color"
+            }, 
+            {
+                "type": "color",
+                "id": "banner-bg-color",
+                "label": "Banner background color",
+                "default":"#F08262"
+              },     
+
+                  {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                  },
+                  {
+                    "type": "range",
+                    "id": "image_width",
+                    "label": "Image width",
+                    "default": 100,
+                    "min": 100,
+                    "max": 200,
+                    "step": 10,
+                    "unit": "px"
+                  },
+                  {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Heading"
+                  },
+                  {
+                    "type": "richtext",
+                    "id": "text",
+                    "label": "Text",
+                    "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+                  }                                         
+        ],
+        "presets": [
+        {
+          "name": "Direct to boot banner"
+        }
+      ]
+     
+ }
+{% endschema %}
+    

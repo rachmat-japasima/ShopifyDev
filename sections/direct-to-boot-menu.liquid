@@ -1,0 +1,64 @@
+
+    <nav class="navigation {% if section.settings.background-color %} section--background-gray {% endif %}" id="mainNav">
+       <!-- Blocks -->
+       {%- for block in section.blocks -%}
+            <a class="navigation__link" href="#{{block.settings.nav-link}}">{{block.settings.nav-link-label}}</a>
+       {%- endfor -%}
+        
+    </nav>
+
+
+    {% schema %}
+    {
+        "name": "Direct to boot Menu",
+        "settings": [
+            {
+              "type": "checkbox",
+              "id": "background-color",
+              "label": "Section background color"
+            }                                  
+        ],
+        "blocks" : [
+            {
+            "type": "text_block",
+            "name": "DTB Menu Item",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "nav-link-label",
+                    "label":"DTB Menu Item"             
+                },
+                {
+                    "type": "select",
+                    "id": "nav-link",
+                    "label": "DTB Target Data",
+                    "options": [
+                      {
+                        "value": "direct-to-boot-pick-up",
+                        "label": "DTB Pick up"
+                      },
+                      {
+                        "value": "direct-to-boot-pricing",
+                        "label": "DTB Pricing"
+                      },
+                      {
+                        "value": "direct-to-boot-faq",
+                        "label": "DTB FAQs"
+                      }
+                    ]
+                  }
+             
+            ]
+        }
+    ]
+ 
+ }
+{% endschema %}
+
+
+
+
+
+
+
+

@@ -1,0 +1,446 @@
+{%- liquid
+    assign main_menu = linklists[section.settings.main_menu_link_list]
+    assign toolbar_menu = linklists[section.settings.toolbar_menu]
+    assign sub_menu = linklists[section.settings.sub_menu_link_list]
+    assign template_name = template | replace: '.', ' ' | truncatewords: 2, '' | handle
+  
+    assign sticky_header = false
+    if section.settings.header_style == 'sticky'
+      assign sticky_header = true
+    endif
+    assign overlay_header = false
+    if template_name == 'index' and section.settings.sticky_index
+      assign overlay_header = true
+    endif
+    if template_name == 'collection' and collection.image and section.settings.sticky_collection
+      assign overlay_header = true
+    endif
+  -%}
+  
+  {%- render 'drawer-menu',
+    section: section,
+    main_menu: main_menu,
+    toolbar_menu: toolbar_menu,
+    logo_alignment: logo_alignment
+  -%}
+  {%- render 'cart-drawer' -%}
+  
+  <style>
+    .site-navigation .site-nav__link{
+      font-size: {{ settings.type_navigation_size }}px;
+      font-weight: 600;
+    }
+    .site-nav__dropdown-link:not(.site-nav__dropdown-link--top-level) {
+      font-size: 12px;
+    }
+    {% if settings.type_navigation_capitalize %}
+      .site-nav__link, .mobile-nav__link--top-level {
+        text-transform: uppercase;
+        letter-spacing: 0.2em;      
+      }
+      .mobile-nav__link--top-level {
+        font-size: 1.1em;
+      }
+      @media only screen and (min-width:769px){
+        .site-nav__link, .mobile-nav__link--top-level{
+          margin-right: 1rem;
+        }
+         
+        }
+    {% endif %}
+  
+    {% if mainmenu.length > 6 %}
+      .site-nav__link {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    {% endif %}
+  
+    {% unless section.settings.mega_menu_images %}
+      .megamenu__colection-image {
+        display: none;
+      }
+    {% endunless %}
+  
+    {%- if settings.color_header == settings.color_body_bg or settings.color_body_bg contains settings.color_header -%}
+
+  
+      .toolbar + .header-sticky-wrapper .site-header {
+        border-top: 0;
+      }
+    {%- endif -%}
+  
+    {%- if settings.color_announcement == settings.color_body_bg -%}
+      .announcement-bar {
+        border-bottom: 1px solid;
+      }
+    {%- endif -%}
+  </style>
+  
+  <div data-section-id="{{ section.id }}" data-section-type="header">
+    {%- if overlay_header or section.settings.announcement_above_header -%}
+      {%- render 'announcement-bar', section: section -%}
+    {%- endif -%}
+  
+    {%- unless overlay_header -%}
+      {%- if section.settings.show_locale_selector or section.settings.show_currency_selector or section.settings.toolbar_social or section.settings.toolbar_menu != blank -%}
+        {%- render 'toolbar',
+          section: section,
+          toolbar_menu: toolbar_menu,
+          overlay_header: overlay_header
+        -%}
+      {%- endif -%}
+    {%- endunless -%}
+  
+    <div class="header-sticky-wrapper">
+      <div id="HeaderWrapper" class="header-wrapper{% if overlay_header %} header-wrapper--sticky is-light{% endif %}">
+  
+        {%- if overlay_header -%}
+          {%- if section.settings.show_locale_selector or section.settings.show_currency_selector or section.settings.toolbar_social or section.settings.toolbar_menu != blank -%}
+            {%- render 'toolbar',
+              section: section,
+              toolbar_menu: toolbar_menu,
+              overlay_header: overlay_header
+            -%}
+          {%- endif -%}
+        {%- endif -%}
+        <header
+          id="SiteHeader"
+          class="site-header{% if settings.type_navigation_style == 'heading' %} site-header--heading-style{% endif %}"
+          data-sticky="{{ sticky_header }}"
+          data-overlay="{{ overlay_header }}">
+          <div class="site-header__search-container">
+            <div class="site-header__search">
+              <div class="page-width">
+                <form action="{{ routes.search_url }}" method="get" role="search"
+                  id="HeaderSearchForm"
+                  class="site-header__search-form">
+                  <input type="hidden" name="type" value="{{ settings.search_type }}">
+                  <button type="submit" class="text-link site-header__search-btn site-header__search-btn--submit">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"/></svg>
+                  </button>
+                  <input type="search" name="q" value="{{ search.terms | escape | replace: '*', '' }}" placeholder="{{ 'general.search.placeholder' | t }}" class="site-header__search-input" aria-label="{{ 'general.search.placeholder' | t }}">
+                </form>
+                <button type="button" id="SearchClose" class="js-search-header-close text-link site-header__search-btn">
+                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
+            
+                </button>
+              </div>
+            </div>
+            {%- if settings.predictive_search_enabled -%}
+              <div id="PredictiveWrapper" class="predictive-results hide" data-image-size="{{ settings.predictive_image_size }}">
+                <div class="page-width">
+                  <div id="PredictiveResults" class="predictive-result__layout"></div>
+                  <div class="text-center predictive-results__footer">
+                    <button type="button" class="btn btn--small" data-predictive-search-button>
+                      <small>
+                        {{ 'general.search.view_more' | t }}
+                      </small>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+          </div>
+          <div class="page-width">
+            <div class="header--top">
+              <div class="small--one-third medium-up--one-fifth header-item--logo">
+                  {%- render 'header-logo-block', section: section -%}
+              </div> 
+              <div class="small--two-thirds header-item--icons medium-up--hide">
+                {%- if settings.search_enable -%}
+                <a href="{{ routes.search_url }}" class="site-nav__link site-nav__link--icon js-search-header">
+                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"/></svg>
+                </a>
+              {%- endif -%}
+                <button
+                    type="button"
+                    class="site-nav__link medium-up--hide site-nav__link--icon js-drawer-open-nav{% if section.settings.main_menu_alignment == 'left' or section.settings.main_menu_alignment == 'left-center' %} medium-up--hide{% endif %}"
+                    aria-controls="NavDrawer">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-hamburger" viewBox="0 0 64 64"><path d="M7 15h51M7 32h43M7 49h51"/></svg>
+                </button>
+                <a class="site-nav__link--icon" onclick="openNav()"> 
+                  <svg style="width:22px;height:22px;" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><g transform="matrix(1.25,0,0,1.25,0,0)"><path d="M16,21.5h1c1.934,0,3.5-1.067,3.5-3V16.33" fill="none" stroke="#000001" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19.5,8.5a4,4,0,0,1,1.334,7.772A1,1,0,0,1,19.5,15.33Z" fill="none" stroke="#000001" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4.5,8.5a4,4,0,0,0-1.334,7.772A1,1,0,0,0,4.5,15.33Z" fill="none" stroke="#000001" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19.5,10V8a7.5,7.5,0,0,0-15,0v2" fill="none" stroke="#000001" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11.5,20.5h4a.5.5,0,0,1,.5.5v1a.5.5,0,0,1-.5.5h-4a1,1,0,0,1-1-1v0a1,1,0,0,1,1-1Z" fill="none" stroke="#000001" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
+                </a>
+                <div id="mySidenav" class="sidenav">
+                   <div class="drawer-header">
+                      <a href="javascript:void(0)" class="drawer__close-button js-drawer-close" onclick="closeNav()">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"></path></svg>
+                      </a>
+                   </div>
+                    <div class="drawer__menu">
+                      <a href="/pages/contact" class="mobile-nav__link">
+                        <i class="fa fa-envelope sub-menu-icon"></i> Contact our Service Team 
+                        </a>
+                      <a href="/pages/contact" class="mobile-nav__link">
+                        <i class="fa fa-tags sub-menu-icon" aria-hidden="true"></i> Wholesale 
+                      </a>
+                      <a href="/pages/contact" class="mobile-nav__link">
+                        <i class="fa fa-users sub-menu-icon" aria-hidden="true"></i>Careers 
+                      </a>
+                    </div>                 
+                </div>
+              <a class="site-nav__link--icon" onclick="openNavAccount()"> 
+                <svg style="width:30px;height:30px;" aria-hidden="true" focusable="false" role="presentation" class="icon icon-user" viewBox="0 0 64 64"><path d="M35 39.84v-2.53c3.3-1.91 6-6.66 6-11.41 0-7.63 0-13.82-9-13.82s-9 6.19-9 13.82c0 4.75 2.7 9.51 6 11.41v2.53c-10.18.85-18 6-18 12.16h42c0-6.19-7.82-11.31-18-12.16z"/></svg>
+              </a>
+              <div id="mySidenavAccount" class="sidenav">
+                 <div class="drawer-header">
+                    <a href="javascript:void(0)" class="drawer__close-button js-drawer-close" onclick="closeNavAccount()">
+                      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"></path></svg>
+                    </a>
+                 </div>
+                 {% if customer %}
+                 <div class="drawer__menu">
+                  <a href="/account/logout" class="  register-button site-nav__dropdown-link ">
+                    Log out 
+                    </a>
+                      <a href="/account/" class=" site-nav__dropdown-link ">
+                        My orders 
+                        </a>
+                        <a href="/pages/rewards-program-page" class=" site-nav__dropdown-link ">
+                          Check balance 
+                          </a> 
+                          <a href="/account/addresses" class=" site-nav__dropdown-link ">
+                            My Profile  
+                            </a>
+                            <div><button id="Rise-account-page-button" style="margin-top: 15px;" class="site-nav__dropdown-link">Store Credit</button></div>                
+                </div>
+                 {% else %}
+                 <div class="drawer__menu">
+                  <a href="/account/login" class="register-button mobile-nav__link">
+                    Login 
+                    </a>
+                    <a href="/pages/rewards-program-page" class="mobile-nav__link mobile-nav--tooltip ">
+                      New customer? Join now <div class="tooltip-register"><i class="fa fa-info sub-menu-icon"></i>
+                        <span class="tooltiptext">Get $5 for 50$</span>
+                      </div>
+                      </a>
+                      <a href="/pages/wholesale-registration-form" class="mobile-nav__link mobile-nav--register">
+                        Wholesale Business Registration 
+                        </a>
+                  
+                </div>
+                 {% endif %} 
+                  
+                
+
+              </div>               
+               
+                <a class="site-nav__link--icon" href="/products/rise-ai-giftcard">
+                  <svg width="31px" height="21px" viewBox="0 0 31 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="shutterstock_1565123161" transform="translate(-366.000000, -669.000000)" fill="#000000">
+                            <g id="Group" transform="translate(366.070000, 669.766000)">
+                                <path d="M22.8030543,4.70187217 L22.827319,4.72852941 C23.7422511,4.41580317 24.3677036,4.04687783 24.6875566,3.63049208 C24.9356335,3.30709276 24.9617647,3.06727941 24.9089932,2.96003959 C24.8604638,2.86114819 24.736086,2.84636878 24.6661765,2.84636878 C24.4968326,2.84636878 24.2942308,2.92630656 24.095871,3.07138575 C23.4480204,3.54638009 22.9854638,4.34772624 22.8030543,4.70187217 Z M22.6472851,5.42501131 L22.0803733,4.81561086 L22.1616516,4.63260747 C22.1857466,4.57871606 22.7626697,3.29648756 23.7375,2.58222285 C24.4014706,2.09597851 25.1945701,2.16704186 25.4528281,2.69178733 C25.6316742,3.05482466 25.5279977,3.53160068 25.1684389,4.00007919 C24.7515271,4.54260747 23.9650452,5.00273756 22.8302036,5.36641968 L22.6472851,5.42501131 L22.6472851,5.42501131 Z" id="Fill-1"></path>
+                                <path d="M20.2113122,2.84636878 C20.1420814,2.84636878 20.0175339,2.86114819 19.9690045,2.9594457 C19.916233,3.06727941 19.9423643,3.30709276 20.1904412,3.63049208 C20.5102941,4.04687783 21.1352376,4.41580317 22.0501697,4.72852941 L22.0746041,4.70187217 C21.8910068,4.34772624 21.4277715,3.54464932 20.7816176,3.07138575 C20.583767,2.92630656 20.3806561,2.84636878 20.2113122,2.84636878 Z M22.2303733,5.42501131 L22.0472851,5.36641968 C20.9131222,5.00273756 20.1266403,4.54313348 19.7097285,4.00007919 C19.349491,3.53160068 19.2459842,3.05423077 19.4253394,2.69178733 C19.6835973,2.16763575 20.4753394,2.0965724 21.1399887,2.58222285 C22.1153281,3.29648756 22.6915724,4.57871606 22.7160068,4.63260747 L22.7971154,4.81561086 L22.2303733,5.42501131 L22.2303733,5.42501131 Z" id="Fill-2"></path>
+                                <path d="M2.28727941,0.606414027 C0.664479638,0.606414027 0.60821267,2.40512443 0.606430995,2.48214367 L0.606430995,17.2156222 C0.60821267,17.2850226 0.673371041,19.0848529 2.28727941,19.0848529 L27.7104638,19.0848529 C29.3243213,19.0848529 29.3894796,17.2850226 29.3911765,17.2084955 L29.3911765,2.47557692 C29.3894796,2.40631222 29.3243213,0.606414027 27.7104638,0.606414027 L2.28727941,0.606414027 Z M27.7104638,19.6913009 L2.28727941,19.6913009 C0.518806561,19.6913009 0.0177658371,18.076086 0,17.2222398 L0,2.47557692 C0.0177658371,1.61502828 0.518806561,0 2.28727941,0 L27.7104638,0 C29.4789027,0 29.9799774,1.61502828 29.9976244,2.46907805 L29.9976244,17.2156222 C29.9799774,18.076086 29.4789027,19.6913009 27.7104638,19.6913009 L27.7104638,19.6913009 Z" id="Fill-3"></path>
+                                <polygon id="Fill-4" points="0.303190045 5.3806052 29.6944005 5.3806052 29.6944005 4.7741233 0.303190045 4.7741233"></polygon>
+                                <polygon id="Fill-5" points="22.1355204 19.3880769 22.7419683 19.3880769 22.7419683 0.30324095 22.1355204 0.30324095"></polygon>
+                                <polyline id="Fill-6" points="24.5933824 7.67789593 21.8085407 4.89257919 22.2373303 4.46378959 25.0221719 7.24910633 24.5933824 7.67789593"></polyline>
+                                <polyline id="Fill-7" points="20.2847851 7.67789593 19.8559955 7.24910633 22.6401584 4.46378959 23.068948 4.89257919 20.2847851 7.67789593"></polyline>
+                                <polygon id="Fill-8" points="3.59258484 16.1459389 11.7088235 16.1459389 11.7088235 15.539491 3.59258484 15.539491"></polygon>
+                                <polygon id="Fill-9" points="5.30718326 13.753405 10.0067477 13.753405 10.0067477 13.1467873 5.30718326 13.1467873"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                  </svg>
+                </a>
+                <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon js-drawer-open-cart site-nav__link--cart" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
+                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-bag-minimal" viewBox="0 0 64 64"><path stroke="null" id="svg_4" fill-opacity="null" stroke-opacity="null" fill="null" d="M11.375 17.863h41.25v36.75h-41.25z"/><path stroke="null" id="svg_2" d="M22.25 18c0-7.105 4.35-9 9.75-9s9.75 1.895 9.75 9"/></svg>
+                   
+                </a>
+
+            </div>
+              <div class="medium-up--two-fifths header-item--icons small--hide">
+                {%- render 'header-desktop-nav-sub', sub_menu: sub_menu, dropdown_alignment: dropdown_alignment -%}     
+                  {%- render 'header-icons', section: section -%}                
+              </div>
+            </div>
+             
+            <div class="header--bottom small--hide">
+              <div class="header-navigation">
+                {%- render 'header-desktop-nav', main_menu: main_menu, dropdown_alignment: dropdown_alignment -%}
+              </div>
+              <div class="sticky-menu--left">
+                <a href="{{ routes.root_url }}"><i class="fa fa-home"></i></a>
+                {%- render 'header-desktop-nav', main_menu: main_menu, dropdown_alignment: dropdown_alignment -%}
+              </div>
+                <div class="sticky-menu--right">
+                  {%- render 'header-desktop-nav-sub', sub_menu: sub_menu, dropdown_alignment: dropdown_alignment -%} 
+                  {% render 'header-icons', section: section -%} </div> 
+            </div>          
+          </div>
+         
+        </header>
+      </div>
+    </div>
+  </div>
+  
+  {% schema %}
+    {
+      "name": "Header",
+      "settings": [
+      {
+        "type": "url",
+        "id": "faq-link",
+        "label": "FAQ link"
+      },
+        {
+          "type": "link_list",
+          "id": "main_menu_link_list",
+          "label": "Navigation",
+          "default": "main-menu"
+        },
+        {
+            "type": "link_list",
+            "id": "sub_menu_link_list",
+            "label": "Sub dropdown menu"
+          } ,
+        {
+          "type": "checkbox",
+          "id": "mega_menu_images",
+          "label": "Show mega menu images",
+          "default": true,
+          "info": "[How to create a mega menu](https://archetypethemes.co/blogs/impulse/how-do-i-create-a-mega-menu)"
+        },
+        {
+          "type": "select",
+          "id": "header_style",
+          "label": "Header style",
+          "default": "normal",
+          "options": [
+            {
+              "value": "normal",
+              "label": "Normal"
+            },
+            {
+              "value": "sticky",
+              "label": "Sticky"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "sticky_index",
+          "label": "Overlay header over home page",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "sticky_collection",
+          "label": "Overlay header over collection",
+          "info": "(if collection image is enabled)",
+          "default": false
+        },
+       
+        {
+          "type": "header",
+          "content": "Toolbar"
+        },
+        {
+          "type": "link_list",
+          "id": "toolbar_menu",
+          "label": "Navigation",
+          "info": "This menu won't show dropdown items"
+        },
+        {
+          "type": "checkbox",
+          "id": "toolbar_social",
+          "label": "Show social icons"
+        },
+        {
+          "type": "header",
+          "content": "Language selector",
+          "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_locale_selector",
+          "label": "Show language selector",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Currency selector",
+          "info": "To add a currency, go to your [currency settings.](/admin/settings/payments)"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_currency_selector",
+          "label": "Show currency selector",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_currency_flags",
+          "label": "Show currency flags",
+          "default": true
+        }
+      ],
+      "blocks": [
+        {
+          "type": "logo",
+          "name": "Logo",
+          "limit": 1,
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "logo",
+              "label": "Logo"
+            },
+            {
+              "type": "image_picker",
+              "id": "logo-inverted",
+              "label": "White logo",
+              "info": "Used when on top of an image"
+            },
+            {
+              "type": "range",
+              "id": "desktop_logo_width",
+              "label": "Desktop logo width",
+              "default": 200,
+              "min": 100,
+              "max": 400,
+              "step": 10,
+              "unit": "px"
+            },
+            {
+              "type": "range",
+              "id": "mobile_logo_width",
+              "label": "Mobile logo width",
+              "default": 140,
+              "min": 60,
+              "max": 200,
+              "step": 10,
+              "unit": "px",
+              "info": "Set as a max-width, may appear smaller"
+            }
+          ]
+        }
+      ],
+      "default": {
+        "settings": {}
+      }
+    }
+  {% endschema %}
+
+  <script>
+    function openNavAccount() {
+      document.getElementById("mySidenavAccount").style.width = "350px";
+    }
+    
+    function closeNavAccount() {
+      document.getElementById("mySidenavAccount").style.width = "0";
+    }
+    </script>
+
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "350px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
+  

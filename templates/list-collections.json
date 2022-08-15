@@ -1,0 +1,156 @@
+{
+  "sections": {
+    "main": {
+      "type": "list-collections-template",
+      "blocks": {
+        "e8957947-2361-4945-9b85-dba23b1ae18b": {
+          "type": "collection",
+          "settings": {
+            "collection": "alcohol"
+          }
+        },
+        "e85ff058-2b10-4abb-8eb9-618a615d3627": {
+          "type": "collection",
+          "settings": {
+            "collection": "bakery-cereal-spreads"
+          }
+        },
+        "c453141e-8b91-42db-a059-b3b3bdacd27d": {
+          "type": "collection",
+          "settings": {
+            "collection": "beauty-personal-care"
+          }
+        },
+        "974977fc-9b1c-414a-832c-a0e8326ebb56": {
+          "type": "collection",
+          "settings": {
+            "collection": "choco-snacks-sweets"
+          }
+        },
+        "d74235f9-967f-43de-8922-15dd7368c235": {
+          "type": "collection",
+          "settings": {
+            "collection": "dairy-eggs"
+          }
+        },
+        "c5920009-5ee9-4dcf-8ff0-0a609152c740": {
+          "type": "collection",
+          "settings": {
+            "collection": "drinks"
+          }
+        },
+        "00f645bc-21d3-489a-8227-2239c5765321": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "frozen"
+          }
+        },
+        "b6dd16dc-d458-4cc0-b569-3dd661549435": {
+          "type": "collection",
+          "settings": {
+            "collection": "food-pantry"
+          }
+        },
+        "10b63497-928e-44e5-9079-032416e920bc": {
+          "type": "collection",
+          "settings": {
+            "collection": "pet-care"
+          }
+        },
+        "ce7d53b8-78e9-42fd-9c8b-7adba3af793f": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "meat-seafood"
+          }
+        },
+        "540d000b-bb6b-4533-9fbf-a25726315fb1": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "e8957947-2361-4945-9b85-dba23b1ae18b",
+        "e85ff058-2b10-4abb-8eb9-618a615d3627",
+        "c453141e-8b91-42db-a059-b3b3bdacd27d",
+        "974977fc-9b1c-414a-832c-a0e8326ebb56",
+        "d74235f9-967f-43de-8922-15dd7368c235",
+        "c5920009-5ee9-4dcf-8ff0-0a609152c740",
+        "00f645bc-21d3-489a-8227-2239c5765321",
+        "b6dd16dc-d458-4cc0-b569-3dd661549435",
+        "10b63497-928e-44e5-9079-032416e920bc",
+        "ce7d53b8-78e9-42fd-9c8b-7adba3af793f",
+        "540d000b-bb6b-4533-9fbf-a25726315fb1"
+      ],
+      "settings": {
+        "title_enable": true,
+        "display_type": "selected",
+        "sort": "alphabetical",
+        "grid": "5"
+      }
+    },
+    "logo-list": {
+      "type": "logo-list",
+      "disabled": true,
+      "blocks": {
+        "logo1": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo2": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo3": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo4": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo5": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo6": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo1",
+        "logo2",
+        "logo3",
+        "logo4",
+        "logo5",
+        "logo6"
+      ],
+      "settings": {
+        "title": "Our brands",
+        "logo_opacity": 76,
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "logo-list"
+  ]
+}
